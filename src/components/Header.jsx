@@ -3,7 +3,7 @@ import { MEDIUM_LOGO } from "../utils/constants";
 
 const Header = () => {
   return (
-    <div className="">
+    <div className="relative bg-white">
       <div className="flex justify-between p-4">
         <div className="pl-36">
           <img className="w-44" src={MEDIUM_LOGO} alt="Medium Logo" />
