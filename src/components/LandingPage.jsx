@@ -7,11 +7,11 @@ import Footer from "./Footer";
 const LandingPage = () => {
   return (
     <div>
-      <div className="sticky top-0 w-full">
+      <div className="sticky top-0 w-full z-10">
       <Header />
       </div>
       
-      <div>
+      <div className="overflow-y-hidden">
         <Body />
         <Features />
         <Footer />
