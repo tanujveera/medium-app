@@ -11,14 +11,19 @@ const Features = () => {
             <div className="my-24 mx-20">
               <p className="text-[80px] font-serif">{feature.heading}</p>
               <p className="text-[80px] font-serif">{feature.headingPart}</p>
-              <p className="text-xl font-serif text-opacity-10">{feature.subHeading}</p>
+              <p className="text-xl font-serif text-opacity-10">
+                {feature.subHeading}
+              </p>
             </div>
           </div>
           <hr className="border border-black opacity-50"></hr>
         </div>
       ))}
-      <div>
-        <button className="bg-green-500 text-7xl w-full text-white font-serif py-20 ease-in-out hover:rounded-full">Unlock a world of wisdom {"->"}</button>
+      <div className="bg-green-500 text-7xl w-full text-white hover:rounded-full">
+        <div className="justify-center font-serif py-20 flex ">
+          <p className="">Unlock a world of wisdom </p> 
+          <p className="">{"->"}</p>
+        </div>
         <hr className="border border-black opacity-50"></hr>
       </div>
     </div>

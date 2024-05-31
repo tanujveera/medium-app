@@ -11,7 +11,7 @@ const LandingPage = () => {
       <Header />
       </div>
       
-      <div className="overflow-y-hidden">
+      <div className="">
         <Body />
         <Features />
         <Footer />
