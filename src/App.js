@@ -1,12 +1,32 @@
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/LandingPage";
+import About from "./components/About";
+import Header from "./components/LandingHeader";
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
+      <Outlet />
     </div>
   );
 }
+
+export const browserRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
+  },
+]);
 
 export default App;

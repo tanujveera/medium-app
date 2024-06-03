@@ -75,4 +75,5 @@ Git Merge
 
 ```sh
 git merge -m "Your merge commit message" [source_branch]
+git push origin
 ```

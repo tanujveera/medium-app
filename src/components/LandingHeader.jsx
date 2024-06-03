@@ -1,7 +1,7 @@
 import React from "react";
 import { MEDIUM_LOGO } from "../utils/constants";
 
-const Header = () => {
+const landingHeader = () => {
   return (
     <div className="bg-white">
       <div className="flex justify-between p-4">
@@ -25,4 +25,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default landingHeader;
