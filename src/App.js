@@ -2,7 +2,6 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
-import Header from "./components/LandingHeader";
 
 function App() {
   return (

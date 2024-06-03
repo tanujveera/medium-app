@@ -8,7 +8,7 @@ const Features = () => {
       {aboutFeatures.map((feature) => (
         <div>
           <div className="flex mx-36 h-[500px]">
-            <p className="text-[300px] text-green-600" key={feature.id}>{feature.number}</p>
+            <p className="text-[300px] text-green-600">{feature.number}</p>
             <div className="my-24 mx-20">
               <p className="text-[80px] font-serif">{feature.heading}</p>
               <p className="text-[80px] font-serif">{feature.headingPart}</p>
