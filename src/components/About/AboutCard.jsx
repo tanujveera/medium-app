@@ -5,7 +5,7 @@ const AboutCard = (props) => {
   return (
     <div>
       <div
-        className="text-white font-serif py-20 flex justify-between hover:cursor-pointer hover:text-black hover:bg-white"
+        className="text-white font-serif py-20 flex justify-between transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-black hover:bg-white"
         key={id}
       >
         <p className="text-7xl pl-8">{data}</p>
