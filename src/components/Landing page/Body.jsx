@@ -1,5 +1,5 @@
 import React from "react";
-import { LANDING_PAGE } from "../utils/constants";
+import { LANDING_PAGE } from "../../utils/constants";
 
 const Body = () => {
   return (

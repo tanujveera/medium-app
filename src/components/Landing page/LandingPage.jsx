@@ -4,16 +4,19 @@ import Body from "./Body";
 import Features from "./Features";
 import Footer from "./Footer";
 import LandingHeader from "./LandingHeader";
+import { aboutFeatures } from "../../utils/constants";
 
 const LandingPage = () => {
   return (
     <div>
       <div className="sticky top-0 w-full z-10">
-      <LandingHeader />
-      </div>      
+        <LandingHeader />
+      </div>
       <div className="">
         <Body />
-        <Features />
+        {aboutFeatures.map((feature) => (
+          <Features key={feature.id} featureData={feature} />
+        ))}
         <Footer />
       </div>
     </div>

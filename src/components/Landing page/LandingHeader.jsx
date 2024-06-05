@@ -1,5 +1,5 @@
 import React from "react";
-import { MEDIUM_LOGO } from "../utils/constants";
+import { MEDIUM_LOGO } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const landingHeader = () => {
