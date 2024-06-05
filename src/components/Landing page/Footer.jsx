@@ -5,8 +5,8 @@ const Footer = () => {
     <div>
       <div className="bg-green-500 text-7xl w-full text-white transition-all duration-300 ease-in-out hover:rounded-full">
         <div className="justify-center font-serif py-20 flex hover:cursor-pointer">
-          <p className="">Unlock a world of wisdom </p>
-          <p className="">→</p>
+          <p className="inline-block transition transform duration-300 ease-in-out hover:-translate-x-6">Unlock a world of wisdom </p>
+          <p className="inline-block transition transform duration-300 ease-in-out hover:translate-x-6">{"→"}</p>
         </div>
         <hr className="border border-black opacity-50"></hr>
       </div>
