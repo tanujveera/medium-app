@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/Landing page/LandingPage";
 import About from "./components/About/About";
+import Membership from "./components/Membership/Membership";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ export const browserRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/membership",
+        element: <Membership />,
       },
     ],
   },
