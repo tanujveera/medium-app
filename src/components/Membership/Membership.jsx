@@ -1,14 +1,16 @@
-import React from 'react'
-import MembershipHeader from './MembershipHeader'
-import MembershipBody from './MembershipBody'
+import React from "react";
+import MembershipHeader from "./MembershipHeader";
+import MembershipBody from "./MembershipBody";
 
 const Membership = () => {
   return (
     <div>
-      <MembershipHeader/>
-      <MembershipBody/>
+      <div className="sticky top-0 w-full z-10">
+        <MembershipHeader />
+      </div>
+      <MembershipBody />
     </div>
-  )
-}
+  );
+};
 
-export default Membership
+export default Membership;
