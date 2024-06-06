@@ -1,4 +1,5 @@
 import React from "react";
+import "../../App.css"
 
 const MembershipBody = () => {
   return (
@@ -22,12 +23,12 @@ const MembershipBody = () => {
       </div>
       <hr className="border border-black opacity-50"></hr>
 
-      <div className="h-screen overflow-y-scroll">
+      <div className="h-screen overflow-y-scroll no-scrollbar">
         <div className="flex pt-20 h-screen scroll-container">
-          <div className="w-2/6 pl-6 sticky top-0 h-screen">
+          <div className="w-2/6 pl-6 sticky h-screen">
             <p className="text-7xl font-serif">Why membership?</p>
           </div>
-          <div className="w-4/6 ml-14 overflow-y-auto">
+          <div className="w-4/6 ml-14 overflow-y-auto no-scrollbar">
             <h2 className="text-5xl font-serif">Reward writers</h2>
             <p className="text-xl text-black pt-4 w-3/4">
               Your membership directly supports the writers, editors, curators,
