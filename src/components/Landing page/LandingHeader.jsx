@@ -11,7 +11,7 @@ const landingHeader = () => {
         </div>
         <div className="flex justify-evenly pr-36 font-medium">
           <Link to="/about" className="px-4 py-2 text-sm">Our Story</Link>
-          <Link to="/membership" className="px-4 py-2 text-sm">Membership</Link>
+          <Link className="px-4 py-2 text-sm">Membership</Link>
           <Link className="px-4 py-2 text-sm">Write</Link>
           <Link className="px-4 py-2 text-sm">Sign in</Link>
           <Link className="">
