@@ -12,10 +12,10 @@ const MembershipHeader = () => {
           </Link>
         </div>
         <div className="flex">
-          <div className="mr-6 text-black rounded-full border border-black px-4 py-2 hover:text-white cursor-pointer">
+          <div className="mr-6 text-black rounded-full border border-black px-4 py-2 hover:cursor-pointer">
             Sign in
           </div>
-          <div className=" text-white rounded-full bg-black px-4 py-2 hover:bg-white cursor-pointer">
+          <div className=" text-white rounded-full bg-black px-4 py-2 hover:cursor-pointer">
             Sign up
           </div>
         </div>
