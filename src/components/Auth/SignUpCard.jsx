@@ -1,18 +1,20 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { loginState } from "../../redux/headerStore";
+import { loginModal, loginState } from "../../redux/headerStore";
 import { signUpOptions } from "../../utils/constants";
 
 const SignUpCard = () => {
   const dispatch = useDispatch();
   const handleSignUp = () => {
-    dispatch(loginState());
+    dispatch(loginState(true));
   };
   const handleClick = () =>{
     console.log("button clicked")
+    dispatch(loginModal())
+    dispatch(loginState(true))
   }
   return (
-    <div className="bg-white w-[650px] shadow-2xl h-[680px] mt-2">
+    <div className="bg-white w-[650px] shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
         <div>
           <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>

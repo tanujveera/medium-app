@@ -1,8 +1,15 @@
 import React from "react";
 import { MEDIUM_LOGO } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginModal } from "../../redux/headerStore";
 
-const landingHeader = () => {
+const LandingHeader = () => {
+  
+  const dispatch = useDispatch();
+  const handleModal = () => {
+    dispatch(loginModal());
+  };
   return (
     <div className="bg-white">
       <div className="flex justify-between p-4">
@@ -10,10 +17,14 @@ const landingHeader = () => {
           <img className="w-44" src={MEDIUM_LOGO} alt="Medium Logo" />
         </div>
         <div className="flex justify-evenly pr-36 font-medium">
-          <Link to="/about" className="px-4 py-2 text-sm">Our Story</Link>
+          <Link to="/about" className="px-4 py-2 text-sm">
+            Our Story
+          </Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
           <Link className="px-4 py-2 text-sm">Write</Link>
-          <Link to="/login" className="px-4 py-2 text-sm">Sign in</Link>
+          <Link onClick={handleModal} className="px-4 py-2 text-sm">
+            Sign in
+          </Link>
           <Link className="">
             <button className="px-4 py-2 text-white bg-black rounded-full text-sm">
               Get Started
@@ -26,4 +37,4 @@ const landingHeader = () => {
   );
 };
 
-export default landingHeader;
+export default LandingHeader;
