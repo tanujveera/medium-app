@@ -2,7 +2,7 @@ import googleIcon from "../assets/google.svg"
 import appleIcon from "../assets/apple.svg"
 import fbIcon from "../assets/facebook.svg"
 import xIcon from "../assets/x.svg"
-import
+import emailIcon from "../assets/email.svg"
 
 
 
@@ -75,18 +75,22 @@ export const signInOptions = [
     image:googleIcon
   },
   {
-    id:"apple",
-    text:"Sign in with Apple",
-    image:appleIcon
-  },
-  {
     id:"facebook",
     text:"Sign in with Facebook",
     image:fbIcon
   },
   {
+    id:"apple",
+    text:"Sign in with Apple",
+    image:appleIcon
+  },
+  {
     id:"x",
     text:"Sign in with X",
     image:xIcon
+  },{
+    id:"email",
+    text:"Sign in with email",
+    image:emailIcon
   }
 ]

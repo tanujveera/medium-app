@@ -8,10 +8,12 @@ const SignIn = () => {
   const dispatch = useDispatch();
   return (
     <div className="mx-auto w-[650px] shadow-2xl h-[680px] mt-2">
-      <div className="pt-12 text-3xl font-serif mx-[220px] pb-20">Welcome back.</div>
+      <div className="pt-12 text-3xl font-serif mx-[220px] pb-16">
+        Welcome back.
+      </div>
       {signInOptions.map((item) => (
         <div className="my-4" key={item.id}>
-          <div className="flex w-80 rounded-full mx-auto border border-black px-2 py-2 text-base font-sans font-semibold">
+          <div className="flex w-72 rounded-full mx-auto border border-black px-2 py-2 text-base font-sans font-semibold text-[15px]">
             <img
               src={item.image}
               alt="Google Icon"
@@ -21,6 +23,11 @@ const SignIn = () => {
           </div>
         </div>
       ))}
+      <div className="flex mx-[240px] pt-6">
+        <div>No account?</div>
+        <button className="text-green-800 font-bold">Create one</button>
+      </div>
+      <div className="mx-auto text-sm text-gray-500">Forgot email or trouble signing in? <button>Get help.</button></div>
     </div>
   );
 };
