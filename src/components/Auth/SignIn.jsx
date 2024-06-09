@@ -7,9 +7,7 @@ import { useSelector } from "react-redux";
 const SignIn = () => {
   const loginStore = useSelector((store) => store.header.isLogin);
 
-  return (<div>
-    {loginStore ? <SignInCard /> : <SignUpCard />}</div>
-    );
+  return <div className="bg-black">{loginStore ? <SignInCard /> : <SignUpCard />}</div>;
 };
 
 export default SignIn;

@@ -8,12 +8,17 @@ const SignUpCard = () => {
   const handleSignUp = () => {
     dispatch(loginState());
   };
+  const handleClick = () =>{
+    console.log("button clicked")
+  }
   return (
-    <div>
-      <div>X</div>
-      <div className="mx-auto w-[650px] shadow-2xl h-[680px] mt-2 px-14 py-11">
-        <div className="pt-24 text-3xl font-serif mx-[220px] pb-16">
-          Join Medium.
+    <div className="bg-white w-[650px] shadow-2xl h-[680px] mt-2">
+      <div className=" px-11 py-8">
+        <div>
+          <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
+          <div className="pt-24 text-3xl font-serif mx-[220px] pb-16">
+            Join Medium.
+          </div>
         </div>
         {signUpOptions.map((item) => (
           <div className="my-4" key={item.id}>

@@ -13,10 +13,10 @@ const SignInCard = () => {
     console.log("button clicked")
   }
   return (
-    <div className="mx-auto w-[650px] shadow-2xl h-[680px] mt-2">
+    <div className="bg-white w-[650px] shadow-2xl h-[680px] mt-2">
       <div className=" px-11 py-8">
         <div className="">
-          <p onClick={handleClick} className="inline-flex  hover:cursor-pointer font-bold">X</p>
+          <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
           <div className="flex justify-center text-3xl font-serif pb-16">
             Welcome back.
           </div>

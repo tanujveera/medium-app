@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const headerStore = createSlice({
   name:"header",
-  initialState:{isHome:null, isAbout:null, isLogin:true},
+  initialState:{isHome:null, isAbout:null, isLogin:true, isLoginModal:true},
   reducers:{
     loginState:(state)=>{
       state.isLogin = !state.isLogin
