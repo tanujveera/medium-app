@@ -18,7 +18,7 @@ const SignUpCard = () => {
       <div className=" px-11 py-8">
         <div>
           <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
-          <div className="pt-24 text-3xl font-serif mx-[220px] pb-16">
+          <div className="pt-24 text-3xl font-serif mx-[180px] pb-16">
             Join Medium.
           </div>
         </div>
