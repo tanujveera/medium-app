@@ -13,7 +13,7 @@ const landingHeader = () => {
           <Link to="/about" className="px-4 py-2 text-sm">Our Story</Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
           <Link className="px-4 py-2 text-sm">Write</Link>
-          <Link className="px-4 py-2 text-sm">Sign in</Link>
+          <Link to="/login" className="px-4 py-2 text-sm">Sign in</Link>
           <Link className="">
             <button className="px-4 py-2 text-white bg-black rounded-full text-sm">
               Get Started

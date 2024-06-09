@@ -3,11 +3,16 @@ import "./App.css";
 import LandingPage from "./components/Landing page/LandingPage";
 import About from "./components/About/About";
 import Membership from "./components/Membership/Membership";
+import SignIn from "./components/Auth/SignIn";
+import { Provider } from "react-redux";
+import appStore from "./redux/appStore";
 
 function App() {
   return (
     <div className="App">
-      <Outlet />
+      <Provider store={appStore}>
+        <Outlet />
+      </Provider>
     </div>
   );
 }
@@ -28,6 +33,10 @@ export const browserRouter = createBrowserRouter([
       {
         path: "/membership",
         element: <Membership />,
+      },
+      {
+        path: "/login",
+        element: <SignIn />,
       },
     ],
   },

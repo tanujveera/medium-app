@@ -1,3 +1,11 @@
+import googleIcon from "../assets/google.svg"
+import appleIcon from "../assets/apple.svg"
+import fbIcon from "../assets/facebook.svg"
+import xIcon from "../assets/x.svg"
+import
+
+
+
 export const MEDIUM_LOGO =
   "https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png";
 
@@ -58,3 +66,27 @@ export const aboutCards =[{
   id:"3",
   data:"Become a member"
 }]
+
+
+export const signInOptions = [
+  {
+    id:"google",
+    text:"Sign in with Google",
+    image:googleIcon
+  },
+  {
+    id:"apple",
+    text:"Sign in with Apple",
+    image:appleIcon
+  },
+  {
+    id:"facebook",
+    text:"Sign in with Facebook",
+    image:fbIcon
+  },
+  {
+    id:"x",
+    text:"Sign in with X",
+    image:xIcon
+  }
+]

@@ -5,10 +5,12 @@ const headerStore = createSlice({
   name:"header",
   initialState:{isHome:null, isAbout:null, isLogin:null},
   reducers:{
-    pageState:(state, action)=>{
-      
+    loginState:(state, action)=>{
+      state.isLogin = action.payload
     }
   }
 })
 
-export default headerStore
+export const {loginState} = headerStore.actions;
+
+export default headerStore.reducer;
