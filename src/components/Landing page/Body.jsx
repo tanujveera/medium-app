@@ -1,7 +1,13 @@
 import React from "react";
 import { LANDING_PAGE } from "../../utils/constants";
+import { useDispatch } from "react-redux";
+import { loginModal } from "../../redux/headerStore";
 
 const Body = () => {
+  const dispatch = useDispatch();
+  const handleModal = () => {
+    dispatch(loginModal());
+  };
   return (
     <div className="">
       <div className="flex justify-between -mt-8 h-[575px]">
@@ -11,7 +17,7 @@ const Body = () => {
           <p className="text-2xl pb-10">
             A place to read, write, and deepen your understanding
           </p>
-          <button className="text-xl text-white bg-black rounded-full w-48 h-10">
+          <button onClick={handleModal} className="text-xl text-white bg-black rounded-full w-48 h-10">
             Get started
           </button>
         </div>

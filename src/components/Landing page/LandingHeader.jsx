@@ -26,7 +26,7 @@ const LandingHeader = () => {
             Sign in
           </Link>
           <Link className="">
-            <button className="px-4 py-2 text-white bg-black rounded-full text-sm">
+            <button onClick={handleModal} className="px-4 py-2 text-white bg-black rounded-full text-sm">
               Get Started
             </button>
           </Link>
