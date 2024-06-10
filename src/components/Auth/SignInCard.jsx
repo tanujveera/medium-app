@@ -9,7 +9,6 @@ const SignInCard = () => {
     dispatch(loginState(false));
   };
   const handleClick = () =>{
-    console.log("button clicked")
     dispatch(loginModal())
     dispatch(loginState(true))
   }

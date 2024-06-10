@@ -14,7 +14,7 @@ const LandingPage = () => {
   return (
     <div>
       {loginModalStore && (
-        <div className=" z-20 fixed inset-0 bg-black bg-opacity-5 backdrop-blur-sm">
+        <div className=" z-20 fixed inset-0 bg-opacity-5 backdrop-blur-sm">
           <SignIn />
         </div>
       )}
