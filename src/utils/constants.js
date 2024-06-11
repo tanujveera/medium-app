@@ -125,3 +125,5 @@ export const signUpOptions = [
     image: emailIcon,
   },
 ];
+
+export const signInWithEmailImg = "https://miro.medium.com/v2/resize:fit:2250/1*Xtzi4EuWq2-KKmKqWEbAgw.png";
