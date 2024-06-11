@@ -10,7 +10,7 @@ const SignInCard = () => {
   };
   const handleClick = () =>{
     dispatch(loginModal())
-    dispatch(loginState(true))
+    // dispatch(loginState(true))
   }
   return (
     <div className=" w-[650px] bg-white shadow-2xl h-[700px] ml-[450px]">

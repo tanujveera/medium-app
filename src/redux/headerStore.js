@@ -1,19 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit"
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const headerStore = createSlice({
-  name:"header",
-  initialState:{isHome:null, isAbout:null, isLogin:true, isLoginModal:false},
-  reducers:{
-    loginState:(state,action)=>{
-      state.isLogin = action.payload
+  name: "header",
+  initialState: { isLogin: true, isLoginModal: false, isEmail: null },
+  reducers: {
+    loginState: (state, action) => {
+      state.isLogin = action.payload;
     },
-    loginModal:(state)=>{
-      state.isLoginModal= !state.isLoginModal
-    }
-  }
-})
+    loginModal: (state) => {
+      state.isLoginModal = !state.isLoginModal;
+    },
+    loginEmail: (state, action) => {
+      state.isEmail = action.payload;
+    },
+  },
+});
 
-export const {loginState,loginModal} = headerStore.actions;
+export const { loginState, loginModal, loginEmail } = headerStore.actions;
 
 export default headerStore.reducer;
