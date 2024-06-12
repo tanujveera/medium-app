@@ -18,7 +18,7 @@ const Body = () => {
           <p className="text-2xl pb-10">
             A place to read, write, and deepen your understanding
           </p>
-          <Link to="/signup">
+          <Link to="/login">
             <button
               onClick={handleModal}
               className="text-xl text-white bg-black rounded-full w-48 h-10"

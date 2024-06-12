@@ -1,19 +1,14 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// import { loginModal, loginState } from "../../redux/headerStore";
+import { useDispatch } from "react-redux";
+import {  loginState } from "../../redux/headerStore";
 import { signUpOptions } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const SignUpCard = () => {
-  // const dispatch = useDispatch();
-  // const handleSignUp = () => {
-  //   dispatch(loginState(true));
-  // };
-  // const handleClick = () =>{
-  //   console.log("button clicked")
-  //   dispatch(loginModal())
-  //   dispatch(loginState(true))
-  // }
+  const dispatch = useDispatch();
+  const handleClick = () =>{
+    dispatch(loginState(true))
+  }
   return (
     <div className="bg-white w-[650px] shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
@@ -39,7 +34,7 @@ const SignUpCard = () => {
         ))}
         <div className="flex justify-center pt-6 pb-20">
           <div>Already have an account? &nbsp;</div>
-          <button className="text-green-800 font-bold">
+          <button onClick={handleClick} className="text-green-800 font-bold">
             Sign in
           </button>
         </div>

@@ -2,14 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const headerStore = createSlice({
   name: "header",
-  initialState: { isLogin: true, isLoginModal: false, isEmail: null },
+  initialState: { isSignin: true, isEmail: null },
   reducers: {
     loginState: (state, action) => {
-      state.isLogin = action.payload;
+      state.isSignin = action.payload;
     },
-    loginModal: (state) => {
-      state.isLoginModal = !state.isLoginModal;
-    },
+
     loginEmail: (state, action) => {
       state.isEmail = action.payload;
     },

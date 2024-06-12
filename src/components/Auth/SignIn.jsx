@@ -5,7 +5,7 @@ import SignUpCard from "./SignUpCard";
 import { useSelector } from "react-redux";
 
 const SignIn = () => {
-  const loginStore = useSelector((store) => store.header.isLogin);
+  const loginStore = useSelector((store) => store.header.isSignin);
 
   return <div>{loginStore ? <SignInCard /> : <SignUpCard />}</div>;
 };

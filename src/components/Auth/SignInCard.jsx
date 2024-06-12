@@ -9,16 +9,12 @@ const SignInCard = () => {
   const handleSignIn = () => {
     dispatch(loginState(false));
   };
-  const handleClick = () =>{
-    dispatch(loginModal())
-    // dispatch(loginState(true))
-  }
   return (
     <div className=" w-[650px] bg-white shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
         <div className="">
           <Link to="/">
-            <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
+            <p className="hover:cursor-pointer font-bold float-end">X</p>
           </Link>
           <div className="flex justify-center text-3xl font-serif pb-16">
             Welcome back.

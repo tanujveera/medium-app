@@ -1,0 +1,1 @@
+export const firebase_twitter = "https://medium-app-10b31.firebaseapp.com/__/auth/handler";

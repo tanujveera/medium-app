@@ -22,10 +22,10 @@ const LandingHeader = () => {
           </Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
           <Link className="px-4 py-2 text-sm">Write</Link>
-          <Link to="/signin"  className="px-4 py-2 text-sm">
+          <Link to="/login"  className="px-4 py-2 text-sm">
             Sign in
           </Link>
-          <Link className="" to="/signup">
+          <Link to="/login">
             <button className="px-4 py-2 text-white bg-black rounded-full text-sm">
               Get Started
             </button>
