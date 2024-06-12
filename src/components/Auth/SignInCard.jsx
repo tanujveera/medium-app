@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { loginModal, loginState } from "../../redux/headerStore";
+import { loginState } from "../../redux/headerStore";
 import { signInOptions } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
