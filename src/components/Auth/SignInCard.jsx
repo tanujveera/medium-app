@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { loginModal, loginState } from "../../redux/headerStore";
 import { signInOptions } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 const SignInCard = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,9 @@ const SignInCard = () => {
     <div className=" w-[650px] bg-white shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
         <div className="">
-          <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
+          <Link to="/">
+            <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
+          </Link>
           <div className="flex justify-center text-3xl font-serif pb-16">
             Welcome back.
           </div>

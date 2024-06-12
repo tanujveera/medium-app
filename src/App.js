@@ -6,6 +6,8 @@ import Membership from "./components/Membership/Membership";
 import SignIn from "./components/Auth/SignIn";
 import { Provider } from "react-redux";
 import appStore from "./redux/appStore";
+import SignUpCard from "./components/Auth/SignUpCard";
+import SignInCard from "./components/Auth/SignInCard";
 
 function App() {
   return (
@@ -37,6 +39,14 @@ export const browserRouter = createBrowserRouter([
       {
         path: "/login",
         element: <SignIn />,
+      },
+      {
+        path: "/signin",
+        element: <SignInCard />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpCard />,
       },
     ],
   },

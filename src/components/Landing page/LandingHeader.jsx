@@ -1,15 +1,15 @@
 import React from "react";
 import { MEDIUM_LOGO } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { loginModal } from "../../redux/headerStore";
+// import { useDispatch } from "react-redux";
+// import { loginModal } from "../../redux/headerStore";
 
 const LandingHeader = () => {
   
-  const dispatch = useDispatch();
-  const handleModal = () => {
-    dispatch(loginModal());
-  };
+  // const dispatch = useDispatch();
+  // const handleModal = () => {
+  //   dispatch(loginModal());
+  // };
   return (
     <div className="bg-white">
       <div className="flex justify-between p-4">
@@ -22,11 +22,11 @@ const LandingHeader = () => {
           </Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
           <Link className="px-4 py-2 text-sm">Write</Link>
-          <Link onClick={handleModal} className="px-4 py-2 text-sm">
+          <Link to="/signin"  className="px-4 py-2 text-sm">
             Sign in
           </Link>
-          <Link className="">
-            <button onClick={handleModal} className="px-4 py-2 text-white bg-black rounded-full text-sm">
+          <Link className="" to="/signup">
+            <button className="px-4 py-2 text-white bg-black rounded-full text-sm">
               Get Started
             </button>
           </Link>

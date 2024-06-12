@@ -2,6 +2,7 @@ import React from "react";
 import { LANDING_PAGE } from "../../utils/constants";
 import { useDispatch } from "react-redux";
 import { loginModal } from "../../redux/headerStore";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -17,9 +18,14 @@ const Body = () => {
           <p className="text-2xl pb-10">
             A place to read, write, and deepen your understanding
           </p>
-          <button onClick={handleModal} className="text-xl text-white bg-black rounded-full w-48 h-10">
-            Get started
-          </button>
+          <Link to="/signup">
+            <button
+              onClick={handleModal}
+              className="text-xl text-white bg-black rounded-full w-48 h-10"
+            >
+              Get started
+            </button>
+          </Link>
         </div>
         <div className="w-[450px] h-[640px]">
           <img className="" src={LANDING_PAGE} alt="Landing Page" />

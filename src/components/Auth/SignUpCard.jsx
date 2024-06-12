@@ -1,23 +1,26 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { loginModal, loginState } from "../../redux/headerStore";
+// import { useDispatch } from "react-redux";
+// import { loginModal, loginState } from "../../redux/headerStore";
 import { signUpOptions } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 const SignUpCard = () => {
-  const dispatch = useDispatch();
-  const handleSignUp = () => {
-    dispatch(loginState(true));
-  };
-  const handleClick = () =>{
-    console.log("button clicked")
-    dispatch(loginModal())
-    dispatch(loginState(true))
-  }
+  // const dispatch = useDispatch();
+  // const handleSignUp = () => {
+  //   dispatch(loginState(true));
+  // };
+  // const handleClick = () =>{
+  //   console.log("button clicked")
+  //   dispatch(loginModal())
+  //   dispatch(loginState(true))
+  // }
   return (
     <div className="bg-white w-[650px] shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
         <div>
-          <p onClick={handleClick} className="hover:cursor-pointer font-bold float-end">X</p>
+          <Link to="/">
+            <p className="hover:cursor-pointer font-bold float-end">X</p>
+          </Link>
           <div className="pt-24 text-3xl font-serif mx-[180px] pb-16">
             Join Medium.
           </div>
@@ -36,7 +39,7 @@ const SignUpCard = () => {
         ))}
         <div className="flex justify-center pt-6 pb-20">
           <div>Already have an account? &nbsp;</div>
-          <button onClick={handleSignUp} className="text-green-800 font-bold">
+          <button className="text-green-800 font-bold">
             Sign in
           </button>
         </div>
