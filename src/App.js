@@ -43,6 +43,13 @@ export const browserRouter = createBrowserRouter([
       },{
         path:"/email",
         element:<EmailSignIn/>
+      },
+      {
+        path:"/signup",
+        element:<SignUpCard/>
+      },{
+        path:"/signin",
+        element:<SignInCard/>
       }
     ],
   },

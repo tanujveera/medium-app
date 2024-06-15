@@ -85,26 +85,31 @@ export const signInOptions = [
     id: "google",
     text: "Sign in with Google",
     image: googleIcon,
+    url:"/google"
   },
   {
     id: "facebook",
     text: "Sign in with Facebook",
     image: fbIcon,
+    url:"/facebook"
   },
   {
     id: "apple",
     text: "Sign in with Apple",
     image: appleIcon,
+    url:"/apple"
   },
   {
     id: "x",
     text: "Sign in with X",
     image: xIcon,
+    url:"/x"
   },
   {
     id: "email",
     text: "Sign in with email",
     image: emailIcon,
+    url:"/email"
   },
 ];
 
@@ -113,16 +118,20 @@ export const signUpOptions = [
     id: "google",
     text: "Sign in with Google",
     image: googleIcon,
+    url:"/google"
   },
   {
     id: "facebook",
     text: "Sign in with Facebook",
     image: fbIcon,
+
+    url:"/facebook"
   },
   {
     id: "email",
     text: "Sign in with email",
     image: emailIcon,
+    url:"/email"
   },
 ];
 

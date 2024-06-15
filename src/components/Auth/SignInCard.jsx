@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { loginState } from "../../redux/headerStore";
 import { signInOptions } from "../../utils/constants";
@@ -22,7 +22,8 @@ const SignInCard = () => {
         </div>
 
         {signInOptions.map((item) => (
-          <div className="my-4" key={item.id}>
+          <Link key={item.id} to={item.url}>
+          <div className="my-4" >
             <div className="flex w-72 rounded-full mx-auto border border-black px-2 py-2 text-base font-sans font-semibold text-[15px]">
               <img
                 src={item.image}
@@ -32,6 +33,8 @@ const SignInCard = () => {
               <div className="mx-auto">{item.text}</div>
             </div>
           </div>
+          </Link>
+          
         ))}
         <div className="flex justify-center pt-6 pb-12">
           <div>No account? &nbsp;</div>

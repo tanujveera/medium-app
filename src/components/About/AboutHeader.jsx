@@ -6,9 +6,9 @@ import { loginModal } from "../../redux/headerStore";
 
 const AboutHeader = () => {
   const dispatch = useDispatch();
-  const handleModal = () => {
-    dispatch(loginModal());
-  };
+  // const handleModal = () => {
+  //   dispatch(loginModal());
+  // };
 
   return (
     <div>
@@ -19,8 +19,8 @@ const AboutHeader = () => {
           </Link>
         </div>
         <div className="flex">
-          <div className="mr-6 text-gray-200 rounded-full border border-white px-4 py-2 hover:text-white cursor-pointer" onClick={handleModal}>Sign in</div>
-          <div className=" text-black rounded-full bg-slate-200 px-4 py-2 hover:bg-white cursor-pointer" onClick={handleModal}>Sign up</div>
+          <div className="mr-6 text-gray-200 rounded-full border border-white px-4 py-2 hover:text-white cursor-pointer" >Sign in</div>
+          <div className=" text-black rounded-full bg-slate-200 px-4 py-2 hover:bg-white cursor-pointer">Sign up</div>
         </div>
       </div>
       <hr className="border border-gray-500 opacity-50"></hr>

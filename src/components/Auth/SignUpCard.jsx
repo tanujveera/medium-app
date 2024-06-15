@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {  loginState } from "../../redux/headerStore";
+import { loginState } from "../../redux/headerStore";
 import { signUpOptions } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const SignUpCard = () => {
   const dispatch = useDispatch();
-  const handleClick = () =>{
-    dispatch(loginState(true))
-  }
+  const handleClick = () => {
+    dispatch(loginState(true));
+  };
   return (
     <div className="bg-white w-[650px] shadow-2xl h-[700px] ml-[450px]">
       <div className=" px-11 py-8">
@@ -21,16 +21,18 @@ const SignUpCard = () => {
           </div>
         </div>
         {signUpOptions.map((item) => (
-          <div className="my-4" key={item.id}>
-            <div className="flex w-72 rounded-full mx-auto border border-black px-2 py-2 text-base font-sans font-semibold text-[15px]">
-              <img
-                src={item.image}
-                alt="Google Icon"
-                className="w-6 rounded-full"
-              />
-              <div className="mx-auto">{item.text}</div>
+          <Link key={item.id} to={item.url}>
+            <div className="my-4">
+              <div className="flex w-72 rounded-full mx-auto border border-black px-2 py-2 text-base font-sans font-semibold text-[15px]">
+                <img
+                  src={item.image}
+                  alt="Google Icon"
+                  className="w-6 rounded-full"
+                />
+                <div className="mx-auto">{item.text}</div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
         <div className="flex justify-center pt-6 pb-20">
           <div>Already have an account? &nbsp;</div>
