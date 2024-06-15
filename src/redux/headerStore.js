@@ -14,6 +14,6 @@ const headerStore = createSlice({
   },
 });
 
-export const { loginState, loginModal, loginEmail } = headerStore.actions;
+export const { loginState, loginEmail } = headerStore.actions;
 
 export default headerStore.reducer;

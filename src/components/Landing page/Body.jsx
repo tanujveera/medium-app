@@ -1,14 +1,8 @@
 import React from "react";
 import { LANDING_PAGE } from "../../utils/constants";
-import { useDispatch } from "react-redux";
-import { loginModal } from "../../redux/headerStore";
 import { Link } from "react-router-dom";
 
 const Body = () => {
-  const dispatch = useDispatch();
-  const handleModal = () => {
-    dispatch(loginModal());
-  };
   return (
     <div className="">
       <div className="flex justify-between -mt-8 h-[575px]">
@@ -20,7 +14,6 @@ const Body = () => {
           </p>
           <Link to="/login">
             <button
-              onClick={handleModal}
               className="text-xl text-white bg-black rounded-full w-48 h-10"
             >
               Get started

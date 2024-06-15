@@ -7,6 +7,9 @@ const EmailSignIn = () => {
   const loginState = useSelector((store) => store.header.isLogin);
   console.log(loginState)
   const dispatch = useDispatch();
+  const handleBackClick = () => {
+    dispatch(loginState(true))
+  }
   return (
     <div className="flex justify-center">
       <section className="w-[600px] place-content-center mx-10 h-screen">
@@ -16,6 +19,7 @@ const EmailSignIn = () => {
               src={back}
               alt="back"
               className=" w-6"
+              onClick={handleBackClick}
             />
           </Link>
           <Link to="/">
@@ -27,13 +31,13 @@ const EmailSignIn = () => {
           {/* <p className="pb-10 w-60">Enter the email address associated with your account, and we’ll send a magic link to your inbox.</p> */}
         </div>
         <div className="pt-16 mx-28">
-          <div className="pb-4">
+         {!loginState && (<div className="pb-4">
             <p className="text-lg font-serif">Name</p>
             <input
               type="text"
               className="border border-black rounded-md px-2 py-1"
             />
-          </div>
+          </div>)}
           <div className="pb-4">
             <p className="text-lg font-serif">Email</p>
             <input
