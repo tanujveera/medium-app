@@ -1,6 +1,6 @@
 import React from "react";
-import MembershipHeader from "./MembershipHeader";
-import MembershipBody from "./MembershipBody";
+import MembershipHeader from "./HomePageHeader";
+import MembershipBody from "./NewStoryBody";
 
 const Membership = () => {
   return (

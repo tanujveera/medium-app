@@ -2,7 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/Landing page/LandingPage";
 import About from "./components/About/About";
-import Membership from "./components/Membership/Membership";
+import Membership from "./components/Home Page/NewStory";
 import SignIn from "./components/Auth/SignIn";
 import { Provider } from "react-redux";
 import appStore from "./redux/appStore";
@@ -51,7 +51,7 @@ export const browserRouter = createBrowserRouter([
         path:"/signin",
         element:<SignInCard/>
       },{
-        path:"/new-story",
+        path:"/home",
         element:<Membership/>
       }
     ],
