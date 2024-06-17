@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MEDIUM_LOGO } from "../../utils/constants";
+import MediumRainbow from "../../assets/Medium Rainbow.jpeg"
+import write from "../../assets/write.svg"
 
 const MembershipHeader = () => {
   return (
@@ -8,15 +9,16 @@ const MembershipHeader = () => {
       <div className="flex justify-between p-6 bg-white">
         <div>
           <Link to="/">
-            <img className="w-44" src={MEDIUM_LOGO} alt="Medium Logo" />
+            <img className="w-32" src={MediumRainbow} alt="Medium Logo" />
           </Link>
         </div>
         <div className="flex">
-          <div className="mr-6 text-black rounded-full border border-black px-4 py-2 hover:cursor-pointer">
-            Sign in
-          </div>
-          <div className=" text-white rounded-full bg-black px-4 py-2 hover:cursor-pointer">
-            Sign up
+          <Link className="mr-6  hover:cursor-pointer flex">
+            <img className="w-6" src={write} alt="Write"/>
+            <p className="pl-1 py-1">Write</p>
+          </Link>
+          <div className=" ">
+            <img src="" alt="notification"/>
           </div>
         </div>
       </div>

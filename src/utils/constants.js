@@ -13,6 +13,7 @@ export const MEDIUM_LOGO_WHITE =
 export const LANDING_PAGE =
   "https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png";
 
+
 export const aboutFeatures = [
   {
     id: "1",

@@ -50,6 +50,9 @@ export const browserRouter = createBrowserRouter([
       },{
         path:"/signin",
         element:<SignInCard/>
+      },{
+        path:"/new-story",
+        element:<Membership/>
       }
     ],
   },
