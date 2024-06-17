@@ -23,7 +23,6 @@ const MembershipBody = () => {
         <div className="border-r border-black opacity-50 h-full"></div>
       </div>
       <hr className="border border-black opacity-50"></hr>
-      <MembershipInfo/>
     </div>
   );
 };

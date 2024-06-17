@@ -8,6 +8,7 @@ const Membership = () => {
       <div className="sticky top-0 w-full z-10">
         <MembershipHeader />
       </div>
+      <MembershipBody/>
     </div>
   );
 };
