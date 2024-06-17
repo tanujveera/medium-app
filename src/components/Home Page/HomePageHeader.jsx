@@ -5,7 +5,7 @@ import write from "../../assets/write.svg"
 import notification from "../../assets/notification.svg"
 import user from "../../assets/user.svg"
 
-const MembershipHeader = () => {
+const HomePageHeader = () => {
   return (
     <div>
       <div className="flex justify-between p-4 bg-white">
@@ -30,4 +30,4 @@ const MembershipHeader = () => {
   );
 };
 
-export default MembershipHeader;
+export default HomePageHeader;
