@@ -14,7 +14,7 @@ const StoryHeader = () => {
           </Link>
         </div>
        <div className="flex pr-24">
-          <Link className="text-white bg-green-500 px-4 py-1 rounded-full ml-2">Publish</Link>
+          {/* <Link className="text-white bg-green-500 px-4 py-1 rounded-full ml-2">Publish</Link> */}
           <Link className="ml-2 mr-6 hover:cursor-pointer flex">
             <img className="w-6" src={notification} alt="notification"/>
           </Link>
