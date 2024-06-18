@@ -2,7 +2,7 @@ import React from "react";
 import MembershipHeader from "./HomePageHeader";
 import MembershipBody from "./NewStoryBody";
 
-const Membership = () => {
+const NewStory = () => {
   return (
     <div>
       <div className="sticky top-0 w-full z-10">
@@ -13,4 +13,4 @@ const Membership = () => {
   );
 };
 
-export default Membership;
+export default NewStory;

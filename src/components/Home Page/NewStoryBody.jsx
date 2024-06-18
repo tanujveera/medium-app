@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const MembershipBody = () => {
+const NewStoryBody = () => {
   return (
     <div className="">
 
@@ -9,4 +9,4 @@ const MembershipBody = () => {
   );
 };
 
-export default MembershipBody;
+export default NewStoryBody;
