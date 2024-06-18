@@ -2,13 +2,15 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/Landing page/LandingPage";
 import About from "./components/About/About";
-import Membership from "./components/Home Page/NewStory";
 import SignIn from "./components/Auth/SignIn";
 import { Provider } from "react-redux";
 import appStore from "./redux/appStore";
 import SignUpCard from "./components/Auth/SignUpCard";
 import SignInCard from "./components/Auth/SignInCard";
 import EmailSignIn from "./components/Auth/EmailSignIn";
+import HomePage from "./components/Home Page/HomePage";
+import TextEditorPage from "./components/New Story/TextEditorPage";
+
 
 function App() {
   return (
@@ -34,25 +36,27 @@ export const browserRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/membership",
-        element: <Membership />,
-      },
-      {
         path: "/login",
         element: <SignIn />,
-      },{
-        path:"/email",
-        element:<EmailSignIn/>
       },
       {
-        path:"/signup",
-        element:<SignUpCard/>
+        path: "/email",
+        element: <EmailSignIn />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpCard />,
+      },
+      {
+        path: "/signin",
+        element: <SignInCard />,
+      },
+      {
+        path: "/home",
+        element: <HomePage />,
       },{
-        path:"/signin",
-        element:<SignInCard/>
-      },{
-        path:"/home",
-        element:<Membership/>
+        path:"/new-story",
+        element:<TextEditorPage/>
       }
     ],
   },

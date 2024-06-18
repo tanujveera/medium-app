@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const NewStoryBody = () => {
+const HomePageBody = () => {
   return (
     <div className="">
 
@@ -9,4 +9,4 @@ const NewStoryBody = () => {
   );
 };
 
-export default NewStoryBody;
+export default HomePageBody;

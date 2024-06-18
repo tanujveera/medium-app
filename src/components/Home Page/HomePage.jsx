@@ -1,8 +1,8 @@
 import React from "react";
 import MembershipHeader from "./HomePageHeader";
-import MembershipBody from "./NewStoryBody";
+import MembershipBody from "./HomePageBody";
 
-const NewStory = () => {
+const HomePage = () => {
   return (
     <div>
       <div className="sticky top-0 w-full z-10">
@@ -13,4 +13,4 @@ const NewStory = () => {
   );
 };
 
-export default NewStory;
+export default HomePage;
