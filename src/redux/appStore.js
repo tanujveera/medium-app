@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import headerReducer from "./headerStore"
+import storyReducer from "./storySlice"
 
 const appStore = configureStore({
   reducer:{
-    header:headerReducer
+    header:headerReducer,
+    story:storyReducer
   }
 })
 
