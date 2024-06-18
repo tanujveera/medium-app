@@ -1,45 +1,46 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import MediumRainbow from "../../assets/Medium Rainbow.jpeg"
-import write from "../../assets/write.svg"
-import notification from "../../assets/notification.svg"
-import user from "../../assets/user.svg"
-import { useDispatch, useSelector } from "react-redux";
+import MediumRainbow from "../../assets/Medium Rainbow.jpeg";
+import write from "../../assets/write.svg";
+import notification from "../../assets/notification.svg";
+import user from "../../assets/user.svg";
+import { useDispatch, } from "react-redux";
 import { homePage, newStory } from "../../redux/storySlice";
 
 const HomePageHeader = () => {
   const dispatch = useDispatch();
-  const storyPage = useSelector((store)=>store.story.isStory)
-  const homePageValue = useSelector((store)=>store.story.isHome)
-  const handleWriteClick = () =>{
-    dispatch(newStory(true))
-    dispatch(homePage(false))
-  }
-  useEffect(()=>{
-    console.log(storyPage)
-    console.log(homePageValue)
-  },[storyPage])
+  const handleWriteClick = () => {
+    dispatch(newStory(true));
+    dispatch(homePage(false));
+  };
+
   return (
     <div>
       <div className="flex justify-between p-4 bg-white">
-        <div>
-          <Link to="/">
-            <img className="w-32" src={MediumRainbow} alt="Medium Logo" />
+        <div className="flex">
+          <Link>
+            <img className="w-32 ml-8 mr-14" src={MediumRainbow} alt="Medium Logo" />
           </Link>
+          <input placeholder="   Search" className="border border-black rounded-full bg-slate-100"/>
         </div>
-
-       <div className="flex">
-       {homePageValue && (<Link onClick={handleWriteClick} className="mr-6 hover:cursor-pointer flex">
-            <img className="w-6" src={write} alt="Write"/>
+        <div className="flex pr-16">
+          <Link
+            onClick={handleWriteClick}
+            to="/new-story"
+            className="mr-6 hover:cursor-pointer flex"
+          >
+            <img className="w-6" src={write} alt="Write" />
             <p className="pl-1 py-1">Write</p>
-          </Link>)}
-          {storyPage && <Link className="text-white bg-green-500 px-4 py-1 rounded-full ml-2">Publish</Link>}
-          <Link className="ml-2 mr-6 hover:cursor-pointer flex">
-            <img className="w-6" src={notification} alt="notification"/>
           </Link>
-          <img className="w-8 hover:cursor-pointer" src={user} alt="user profile"/>
+          <Link className="ml-2 mr-6 hover:cursor-pointer flex">
+            <img className="w-6" src={notification} alt="notification" />
+          </Link>
+          <img
+            className="w-8 hover:cursor-pointer"
+            src={user}
+            alt="user profile"
+          />
         </div>
-        
       </div>
       <hr className="border border-gray-500 opacity-50"></hr>
     </div>

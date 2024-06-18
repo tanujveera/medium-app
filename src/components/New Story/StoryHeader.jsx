@@ -7,14 +7,13 @@ import user from "../../assets/user.svg"
 const StoryHeader = () => {
   return (
     <div>
-      <div className="flex justify-between p-4 bg-white pl-12">
+      <div className="flex justify-between p-4 bg-white pl-44">
         <div>
-          <Link to="/">
+          <Link to="/home">
             <img className="w-32" src={MediumRainbow} alt="Medium Logo" />
           </Link>
         </div>
-
-       <div className="flex">
+       <div className="flex pr-24">
           <Link className="text-white bg-green-500 px-4 py-1 rounded-full ml-2">Publish</Link>
           <Link className="ml-2 mr-6 hover:cursor-pointer flex">
             <img className="w-6" src={notification} alt="notification"/>
