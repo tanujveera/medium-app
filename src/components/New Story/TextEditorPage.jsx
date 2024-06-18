@@ -1,7 +1,7 @@
 import React from "react";
 import StoryTextEditor from "./StoryTextEditor"
 
-const MembershipInfo = () => {
+const TextEditorPage = () => {
   return (
     <div>
       <div className="pt-8 flex flex-col items-center mx-auto">
@@ -12,4 +12,4 @@ const MembershipInfo = () => {
   );
 };
 
-export default MembershipInfo;
+export default TextEditorPage;
