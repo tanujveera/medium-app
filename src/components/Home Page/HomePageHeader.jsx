@@ -21,7 +21,7 @@ const HomePageHeader = () => {
           <Link>
             <img className="w-32 ml-8 mr-14" src={MediumRainbow} alt="Medium Logo" />
           </Link>
-          <input placeholder="   Search" className="border border-black rounded-full bg-slate-100"/>
+          <input placeholder="Search" className="border border-black rounded-full bg-slate-50"/>
         </div>
         <div className="flex pr-16">
           <Link

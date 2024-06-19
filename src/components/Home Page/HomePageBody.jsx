@@ -1,10 +1,11 @@
 import React from "react";
 import "../../App.css";
+import HomePost from "./HomePost";
 
 const HomePageBody = () => {
   return (
-    <div className="">
-
+    <div className="mx-auto">
+     <HomePost/>
     </div>
   );
 };
