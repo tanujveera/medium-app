@@ -1,14 +1,14 @@
 import React from "react";
-import MembershipHeader from "./HomePageHeader";
-import MembershipBody from "./HomePageBody";
+import HomePageHeader from "./HomePageHeader"
+import HomePageBody from "./HomePageBody"
 
 const HomePage = () => {
   return (
     <div>
       <div className="sticky top-0 w-full z-10">
-        <MembershipHeader />
+       <HomePageHeader/>
       </div>
-      <MembershipBody/>
+      <HomePageBody/>
     </div>
   );
 };
