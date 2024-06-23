@@ -30,7 +30,7 @@ const HomePageHeader = () => {
             className="mr-6 hover:cursor-pointer flex"
           >
             <img className="w-6" src={write} alt="Write" />
-            <p className="pl-1 py-1">Write</p>
+            <p className="pl-1 py-2">Write</p>
           </Link>
           <Link className="ml-2 mr-6 hover:cursor-pointer flex">
             <img className="w-6" src={notification} alt="notification" />
