@@ -1,10 +1,26 @@
-import React from 'react'
-import { api, pageData } from './URL_Constants';
+import { useDispatch, useSelector } from "react-redux";
+import { api, pageData } from "./URL_Constants";
+import { pageInfoData } from "../redux/headerStore";
+import { useEffect } from "react";
 
-const useGetData = async()=>{
-  const apiData = await fetch(api+pageData)
-  const {data} = await apiData.json();
-  
-}
+const useGetData = () => {
+  const dispatch = useDispatch();
+  const getData = useSelector((store)=>store.header.pageInfo);
 
-export default useGetData
+  const getPageData = async () => {
+    const apiData = await fetch(api + pageData);
+    const jsonData = await apiData?.json();
+    const data = jsonData?.data;
+    console.log(data)
+    dispatch(pageInfoData(data))
+  };
+
+  useEffect(()=>{
+    if(!getData){
+      getPageData()
+    }
+  },[])
+  return getData;
+};
+
+export default useGetData;

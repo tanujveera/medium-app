@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const headerStore = createSlice({
   name: 'header',
-  initialState: { isSignIn: true, isEmail: false },
+  initialState: { isSignIn: true, isEmail: false, pageInfo:{} },
   reducers: {
     loginState: (state, action) => {
       state.isSignIn = action.payload;
@@ -11,9 +11,12 @@ const headerStore = createSlice({
     loginEmail: (state, action) => {
       state.isEmail = action.payload;
     },
+    pageInfoData:(state,action) => {
+      state.pageInfo= action.payload;
+    }
   },
 });
 
-export const { loginState, loginEmail } = headerStore.actions;
+export const { loginState, loginEmail, pageInfoData } = headerStore.actions;
 
 export default headerStore.reducer;
