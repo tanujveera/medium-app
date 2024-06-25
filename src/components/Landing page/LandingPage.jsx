@@ -4,29 +4,20 @@ import Features from "./Features";
 import Footer from "./Footer";
 import LandingHeader from "./LandingHeader";
 import PageTitle from "../../utils/PageTitle";
-import useGetData from "../../utils/useGetData.js";
 import { useDispatch, useSelector } from "react-redux";
-import { api, pageData } from "../../utils/URL_Constants.js";
+import { API, LANDING } from "../../utils/URL_Constants.js";
 import { pageInfoData } from "../../redux/headerStore.js";
+import handleGetData from "../../utils/handleGetData";
 
 const LandingPage = () => {
-  const data = useGetData();
+  // const data = useGetData();
   const dispatch = useDispatch();
   const dataAPI = useSelector((store)=>store.header.pageInfo)
-  console.log(dataAPI);
-  const getPageData = async () => {
-    const apiData = await fetch(api + pageData);
-    const jsonData = await apiData.json();
-    const data = jsonData.data;
-    // console.log(data)
-    dispatch(pageInfoData(data))
-  }
-  console.log(dataAPI);
+  
   useEffect(()=>{
-    getPageData()
+    handleGetData(LANDING,dispatch,pageInfoData)
   },[])
-  console.log(data);
-  // console.log(dataAPI);
+  
   return (
     <div>
       <PageTitle title="Medium – Where good ideas find you." />
@@ -35,7 +26,7 @@ const LandingPage = () => {
       </div>
       <div className="">
         <Body />
-        {dataAPI?.aboutFeatures?.map((feature) => (
+        {dataAPI?.landingFeatures?.map((feature) => (
           <Features key={feature.id} featureData={feature} />
         ))}
         <Footer />
