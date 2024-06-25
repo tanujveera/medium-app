@@ -5,19 +5,19 @@ import Footer from "./Footer";
 import LandingHeader from "./LandingHeader";
 import PageTitle from "../../utils/PageTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { API, LANDING } from "../../utils/URL_Constants.js";
+import { LANDING } from "../../utils/URL_Constants.js";
 import { pageInfoData } from "../../redux/headerStore.js";
 import handleGetData from "../../utils/handleGetData";
 
 const LandingPage = () => {
-  // const data = useGetData();
   const dispatch = useDispatch();
-  const dataAPI = useSelector((store)=>store.header.pageInfo)
-  
+  const dataAPI = useSelector((store)=>store.header.landing)
+  console.log(dataAPI);
+
   useEffect(()=>{
     handleGetData(LANDING,dispatch,pageInfoData)
   },[])
-  
+
   return (
     <div>
       <PageTitle title="Medium – Where good ideas find you." />
