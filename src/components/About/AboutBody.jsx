@@ -1,14 +1,25 @@
-import React from 'react'
-import { aboutCards, aboutData } from '../../utils/constants'
+import React, {useEffect} from 'react'
 import AboutCard from './AboutCard'
+import { useDispatch, useSelector } from "react-redux";
+import handleGetData from '../../utils/handleGetData';
+import { ABOUT } from '../../utils/URL_Constants';
+import { aboutCards } from '../../utils/constants';
+import { aboutData } from '../../redux/headerStore';
 
 const AboutBody = () => {
+  const dispatch = useDispatch()
+  const aboutAPI = useSelector((store)=>store.header.about)
+  // console.log(aboutAPI);
+  useEffect(() => {
+    handleGetData(ABOUT,dispatch,aboutData)
+  }, [])
+  
   return (
     <div className="bg-black">
     <div className="w-1/2 text-white pl-10 pb-32">
-      <p className="text-8xl font-serif pt-36">{aboutData.heading1}</p>
-      <p className="pt-16 text-xl font-serif">{aboutData.heading2}</p>
-      <p className="pt-4 text-xl font-serif pb-10">{aboutData.heading3}</p>
+      <p className="text-8xl font-serif pt-36">{aboutAPI?.aboutData?.heading1}</p>
+      <p className="pt-16 text-xl font-serif">{aboutAPI?.aboutData?.heading2}</p>
+      <p className="pt-4 text-xl font-serif pb-10">{aboutAPI?.aboutData?.heading3}</p>
       <div className="text-3xl">
         <p className=" bg-slate-200 bg-opacity-50 inline-grid">
           Ultimately, our goal is to deepen our collective
@@ -18,7 +29,7 @@ const AboutBody = () => {
         </p>
         <p className=" bg-slate-200 bg-opacity-50 mt-1 inline-grid">writing.</p>
       </div>
-      <p className="pt-10 text-xl font-serif">{aboutData.heading4}</p>
+      <p className="pt-10 text-xl font-serif">{aboutAPI?.aboutData?.heading4}</p>
       <p className="pt-4 text-xl font-serif">
         Instead of selling ads or selling your data, we’re supported by a
         growing community of Medium members who align with our mission. If
