@@ -2,9 +2,8 @@ version: "3.8"
 services:
   backend:
     build:
-      context: .
+      context: ./back-end
       dockerfile: Dockerfile
-    working_dir: /app/BE
     volumes:
       - ./back-end:/app
     ports:
@@ -12,9 +11,8 @@ services:
     command: ["node", "src/index.js"]
   frontend:
     build:
-      context: .
+      context: ./front-end
       dockerfile: Dockerfile
-    working_dir: /app/FE
     volumes:
       - ./front-end:/app
     ports:

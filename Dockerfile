@@ -1,17 +1,36 @@
-FROM node:20.15.0-alpine3.20
+# Use base image
+FROM node:14 AS base
 WORKDIR /app
-COPY ./front-end/package*.json /FE
-RUN pwd
-RUN ls
+
+# Install global dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Frontend build stage
+FROM base AS frontend_build
+WORKDIR /app/frontend
+COPY ./frontend/package.json ./frontend/package-lock.json ./
+RUN npm install
+COPY ./frontend .
+RUN npm run build
+
+# Backend build stage
+FROM base AS backend_build
+WORKDIR /app/backend
+COPY ./backend/package.json ./backend/package-lock.json ./
+RUN npm install
+COPY ./backend .
+
+# Final stage for both frontend and backend
+FROM node:14 AS final
 WORKDIR /app
-RUN pwd
-COPY ./back-end/package*.json /BE
-RUN pwd
-RUN ls
-# WORKDIR /app/FE
-# RUN npm install
-# WORKDIR /app/BE
-# RUN npm install
-# WORKDIR /app
-# COPY ./front-end /app/FE
-# COPY ./back-end /app/BE
+RUN npm install -g serve
+COPY --from=frontend_build /app/frontend/build ./frontend/build
+COPY --from=backend_build /app/backend .
+
+# Expose backend port
+EXPOSE 3000
+EXPOSE 5000
+
+# Start the backend
+CMD ["node", "backend/index.js"]
