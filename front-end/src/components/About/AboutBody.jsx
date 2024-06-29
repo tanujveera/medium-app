@@ -7,7 +7,7 @@ import { aboutCards } from '../../utils/constants';
 import { aboutData } from '../../redux/headerStore';
 
 const AboutBody = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const aboutAPI = useSelector((store)=>store.header.about)
   // console.log(aboutAPI);
   useEffect(() => {
