@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/BE
+    volumes:
+      - ./back-end:/app
+    ports:
+      - "5000:5000"
+    command: ["node", "src/index.js"]
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/FE
+    volumes:
+      - ./front-end:/app
+    ports:
+      - "3000:3000"
+    command: ["npm","start"]
