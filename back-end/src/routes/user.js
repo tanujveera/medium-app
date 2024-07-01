@@ -88,6 +88,6 @@ userRouter.put("/update",authMiddleware, async (req,res)=>{
     })
   }
   try{
-    const user = await updateUser(username,updated)
+    const user = await updateUser(username,updated);
   }
 })
