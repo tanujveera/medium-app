@@ -29,13 +29,13 @@ wsl --shutdown
 
 To reduce the RAM usage by WSL by giving a `.wslconfig` config file.
 
-Go to `C:/Users/<user_id>/` and create a file `.wslconfig`
+Go to `C:/Users/<user_id>/` and create a file `.wslconfig` and the below details.
+Add processors can be half of total processors.
 
-```js
-// .wslconfig
+```
 [wsl2]
 memory=2GB
-processors=1
+processors=1 
 ```
 
 You can check your processor cores in Task Manager > Performance > CPU > Here check for Cores field.
