@@ -1,20 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MediumRainbow from "../../assets/Medium Rainbow.jpeg";
 import write from "../../assets/write.svg";
 import notification from "../../assets/notification.svg";
 import user from "../../assets/user.svg";
 import { useDispatch, } from "react-redux";
 import { homePage, newStory } from "../../redux/storySlice";
+import { logout } from "../../utils/auth/emailAuth";
 
 const HomePageHeader = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleWriteClick = () => {
     dispatch(newStory(true));
     dispatch(homePage(false));
   };
-  const handleLogout = ()=>{
-    
+  const handleLogout = async ()=>{
+    console.log("logout jsx");
+    const response = await logout();
+    console.log(response);
   }
 
   return (
