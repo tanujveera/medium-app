@@ -21,7 +21,7 @@ const LandingHeader = () => {
             Our Story
           </Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
-          <Link className="px-4 py-2 text-sm">Write</Link>
+          <Link to="/login" className="px-4 py-2 text-sm">Write</Link>
           <Link to="/login"  className="px-4 py-2 text-sm">
             Sign in
           </Link>

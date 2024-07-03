@@ -4,6 +4,7 @@ import { createUser, deleteAllUsers, deleteUser, getAllUsers, getUser, updateUse
 import jwt from "jsonwebtoken"
 import { JWT_SECRET } from "../data/config.js";
 import { authMiddleware } from "../authMiddleware.js";
+import bcrypt from "bcrypt";
 
 export const userRouter = express.Router();
 
@@ -37,12 +38,13 @@ userRouter.post("/signup", async (req,res) => {
       msg:"Email already taken/ Input incorrect"
     })
   }
-  const userCreate = await createUser(username,password,firstName,lastName);
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const userCreate = await createUser(username,hashedPassword,firstName,lastName);
   const uName = userCreate.username;
   const token = jwt.sign(uName,JWT_SECRET)
+  res.cookie('token',token,{ httpOnly: true, secure: true })
   res.status(HTTP.OK).json({
     msg:"User created successfully",
-    token:token
   })
 });
 
@@ -54,17 +56,24 @@ const signinBody = z.object({
 
 userRouter.post("/signin", async (req,res)=>{
   const {success} = signinBody.safeParse(req.body);
-  const {username} = req.body;
+  const {username, password} = req.body;
   if(!success){
     res.status(HTTP.LENGTH_REQUIRED).json({
       msg:"Incorrect inputs"
     })
   }
   const user = await getUser(req.body.username);
+  console.log(user);
+  const isPasswordValid = await bcrypt.compare(password, user.password)
+  if(!isPasswordValid){
+    return res.status(401).json({msg:"Invalid Credentials"})
+  }
   if(user){
     const token = jwt.sign(username,JWT_SECRET);
+    res.cookie('token',token,{ httpOnly: true, secure: true })
     res.status(HTTP.OK).json({
-      token:token
+      msg:"Login Successful",
+      tokenId: token
     })
     return;
   }
@@ -144,4 +153,10 @@ userRouter.delete("/deleteAll",authMiddleware, async (req,res)=>{
       msg:"Couldn't delete all users"
     })
   }
+})
+
+// User logout
+userRouter.post("/logout",(req,res)=>{
+  res.clearCookie('token',{httpOnly:true, secure:false})
+  res.status(200).json({msg:"Logged out successfully"})
 })

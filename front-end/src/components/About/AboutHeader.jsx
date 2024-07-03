@@ -1,11 +1,11 @@
 import React from "react";
 import { MEDIUM_LOGO_WHITE } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { loginModal } from "../../redux/headerStore";
+// import { useDispatch } from "react-redux";
+// import { loginModal } from "../../redux/headerStore";
 
 const AboutHeader = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const handleModal = () => {
   //   dispatch(loginModal());
   // };

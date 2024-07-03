@@ -1,13 +1,38 @@
-import React from "react";
+import React, {useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import back from "../../assets/back.svg";
 import { loginState } from "../../redux/headerStore";
+import { emailAuthSignIn, emailAuthSignUp } from "../../utils/auth/emailAuth";
 
 const EmailSignIn = () => {
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const password = useRef();
   const loginStore = useSelector((store) => store.header.isSignIn);
-  console.log(loginStore)
   const dispatch = useDispatch();
+  const navigate = useNavigate()
+
+  const handleEmailAuth = async() => {
+    console.log(loginStore);
+    if(loginStore){
+      const response = await emailAuthSignIn(email.current.value, password.current.value);
+      console.log(response);
+      if(response.status === 200){
+        navigate("/home")
+      }
+    }
+    if(!loginStore){
+      console.log(loginStore);
+      const response = await emailAuthSignUp(firstName.current.value,lastName.current.value, email.current.value, password.current.value);
+      console.log(response);
+      if(response.status === 411){
+        navigate("/email")
+      }
+    }
+  }
+
   const handleBackClick = () => {
     dispatch(loginState(true))
     console.log("clicked back")
@@ -34,8 +59,15 @@ const EmailSignIn = () => {
         </div>
         <div className="pt-16 mx-28">
          {!loginStore && (<div className="pb-4">
-            <p className="text-lg font-serif">Name</p>
+            <p className="text-lg font-serif">First Name</p>
             <input
+            ref={firstName}
+              type="text"
+              className="border border-black rounded-md px-2 py-1"
+            />
+            <p className="text-lg font-serif">Last Name</p>
+            <input
+            ref={lastName}
               type="text"
               className="border border-black rounded-md px-2 py-1"
             />
@@ -43,6 +75,7 @@ const EmailSignIn = () => {
           <div className="pb-4">
             <p className="text-lg font-serif">Email</p>
             <input
+            ref={email}
               type="email"
               className="border border-black rounded-md px-2 py-1 place-items-center"
             />
@@ -50,12 +83,13 @@ const EmailSignIn = () => {
           <div className="pb-4">
             <p className="text-lg font-serif">Password</p>
             <input
+            ref={password}
               type="password"
               className="border border-black rounded-md px-2 py-1"
             />
           </div>
           <div className="">
-            <button className="border border-black text-white bg-black px-16 py-1 rounded-full">
+            <button className="border border-black text-white bg-black px-16 py-1 rounded-full" onClick={handleEmailAuth}>
               {loginStore ? "Sign in" : "Sign up"}
             </button>
           </div>

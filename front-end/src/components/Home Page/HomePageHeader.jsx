@@ -13,6 +13,9 @@ const HomePageHeader = () => {
     dispatch(newStory(true));
     dispatch(homePage(false));
   };
+  const handleLogout = ()=>{
+    
+  }
 
   return (
     <div>
@@ -40,6 +43,7 @@ const HomePageHeader = () => {
             src={user}
             alt="user profile"
           />
+          <button className="pl-2" onClick={handleLogout}>Logout</button>
         </div>
       </div>
       <hr className="border border-gray-500 opacity-50"></hr>
