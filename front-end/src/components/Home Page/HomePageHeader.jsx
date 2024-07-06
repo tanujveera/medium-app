@@ -16,8 +16,12 @@ const HomePageHeader = () => {
     dispatch(homePage(false));
   };
   const handleLogout = async ()=>{
-    console.log("logout jsx");
+    // console.log("logout jsx");
     const response = await logout();
+    if(response.data.msg === 'Logged out successfully'){
+      navigate("/")
+    }
+    
     console.log(response);
   }
 

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/Landing page/LandingPage";
@@ -10,9 +11,22 @@ import SignInCard from "./components/Auth/SignInCard";
 import EmailSignIn from "./components/Auth/EmailSignIn";
 import HomePage from "./components/Home Page/HomePage";
 import TextEditorPage from "./components/New Story/TextEditorPage";
-
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuthStatus } from "./redux/authSlice";
+import ProtectedRoute from "./utils/protectedRoute";
 
 function App() {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  useEffect(() => {
+    dispatch(checkAuthStatus());
+    const intervalId = setInterval(() => {
+      dispatch(checkAuthStatus());
+    }, 5000); // Check every 5 seconds
+
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Provider store={appStore}>
@@ -25,39 +39,39 @@ function App() {
 export const browserRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <LandingPage />,
+  },      {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/login",
+    element: <SignIn />,
+  },
+  {
+    path: "/email",
+    element: <EmailSignIn />,
+  },
+  {
+    path: "/signin",
+    element: <SignInCard />,
+  },
+  {
+    path: "/signup",
+    element: <SignUpCard />,
+  },
+  {
+    path:"/home",
+    element:<ProtectedRoute/>,
     children: [
-      {
-        path: "/",
-        element: <LandingPage />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/login",
-        element: <SignIn />,
-      },
-      {
-        path: "/email",
-        element: <EmailSignIn />,
-      },
-      {
-        path: "/signup",
-        element: <SignUpCard />,
-      },
-      {
-        path: "/signin",
-        element: <SignInCard />,
-      },
       {
         path: "/home",
         element: <HomePage />,
-      },{
-        path:"/new-story",
-        element:<TextEditorPage/>
-      }
+      },
+      {
+        path: "/new-story",
+        element: <TextEditorPage />,
+      },
     ],
   },
 ]);

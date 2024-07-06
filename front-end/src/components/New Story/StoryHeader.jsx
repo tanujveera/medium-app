@@ -1,10 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MediumRainbow from "../../assets/Medium Rainbow.jpeg";
 import notification from "../../assets/notification.svg";
 import user from "../../assets/user.svg";
+import { logout } from "../../utils/auth/emailAuth";
 
 const StoryHeader = () => {
+  const navigate = useNavigate()
+  const handleLogout = async ()=>{
+    console.log("logout jsx");
+    const response = await logout();
+    if(response.data.msg === 'Logged out successfully'){
+      navigate("/")
+    }
+    console.log(response);
+  }
   return (
     <div>
       <div className="flex justify-between p-4 bg-white pl-44">
@@ -24,6 +34,7 @@ const StoryHeader = () => {
             src={user}
             alt="user profile"
           />
+          <button className="pl-2" onClick={handleLogout}>Logout</button>
         </div>
       </div>
       <hr className="border border-gray-500 opacity-50"></hr>
