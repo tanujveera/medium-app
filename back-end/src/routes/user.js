@@ -160,3 +160,7 @@ userRouter.post("/logout",(req,res)=>{
   res.clearCookie('token',{httpOnly:true, secure:false})
   res.status(200).json({msg:"Logged out successfully"})
 })
+
+userRouter.get('/auth-status', authMiddleware, (req, res) => {
+  res.status(200).json({ user: req.userId });
+});

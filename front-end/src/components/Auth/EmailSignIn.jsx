@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef,useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import back from "../../assets/back.svg";
@@ -12,7 +12,10 @@ const EmailSignIn = () => {
   const password = useRef();
   const loginStore = useSelector((store) => store.header.isSignIn);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [credError,setCredError] = useState(null);
+  // const { isAuthenticated, loading } = useSelector((state) => state.auth);
+
 
   const handleEmailAuth = async() => {
     console.log(loginStore);
@@ -20,6 +23,7 @@ const EmailSignIn = () => {
       const response = await emailAuthSignIn(email.current.value, password.current.value);
       console.log(response);
       if(response.status === 200){
+        setCredError(true)
         navigate("/home")
       }
     }
@@ -27,7 +31,8 @@ const EmailSignIn = () => {
       console.log(loginStore);
       const response = await emailAuthSignUp(firstName.current.value,lastName.current.value, email.current.value, password.current.value);
       console.log(response);
-      if(response.status === 411){
+      if(response.status === 411 || response.status === 401){
+        setCredError(false)
         navigate("/email")
       }
     }
@@ -87,6 +92,7 @@ const EmailSignIn = () => {
               type="password"
               className="border border-black rounded-md px-2 py-1"
             />
+            {credError && (<p className="text-red-600">Check your credentials</p>)}
           </div>
           <div className="">
             <button className="border border-black text-white bg-black px-16 py-1 rounded-full" onClick={handleEmailAuth}>
