@@ -37,7 +37,7 @@ const HomePageHeader = () => {
         <div className="flex pr-16">
           <Link
             onClick={handleWriteClick}
-            to="/new-story"
+            to="/app/new-story"
             className="mr-6 hover:cursor-pointer flex"
           >
             <img className="w-6" src={write} alt="Write" />

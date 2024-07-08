@@ -60,3 +60,6 @@ export const deleteAllUsers = async () =>{
   const user = await prisma.user.deleteMany();
   return user
 }
+
+//---------------------------------------------------------------
+

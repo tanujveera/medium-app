@@ -24,7 +24,7 @@ const EmailSignIn = () => {
       console.log(response);
       if(response.status === 200){
         setCredError(true)
-        navigate("/home")
+        navigate("/app/home")
       }
     }
     if(!loginStore){

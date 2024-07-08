@@ -73,7 +73,6 @@ userRouter.post("/signin", async (req,res)=>{
     res.cookie('token',token,{ httpOnly: true, secure: true })
     res.status(HTTP.OK).json({
       msg:"Login Successful",
-      tokenId: token
     })
     return;
   }

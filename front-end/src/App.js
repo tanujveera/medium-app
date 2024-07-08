@@ -63,11 +63,11 @@ export const browserRouter = createBrowserRouter([
         element: <SignUpCard />,
       },
       {
-        path: "/home",
+        path: "/app/home",
         element: <HomePage />,
       },
       {
-        path: "/new-story",
+        path: "/app/new-story",
         element: <TextEditorPage />,
       },
       // {
