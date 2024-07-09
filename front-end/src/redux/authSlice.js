@@ -11,6 +11,7 @@ const authSlice = createSlice({
   initialState: {
     isAuthenticated: false,
     user: null,
+    loading:false
   },
   reducers: {
     logout: (state) => {
@@ -25,15 +26,18 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(checkAuthStatus.pending, (state) => {
-        state.isAuthenticated = false;
+        state.loading = true;
+        state.isAuthenticated= false;
       })
       .addCase(checkAuthStatus.fulfilled, (state, action) => {
         state.isAuthenticated = true;
-        state.user = action.payload;
+        state.user = action.payload.user;
+        state.loading = false;
       })
       .addCase(checkAuthStatus.rejected, (state) => {
         state.isAuthenticated = false;
         state.user = null;
+        state.loading = false;
       });
   },
 });

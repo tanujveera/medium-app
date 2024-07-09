@@ -15,14 +15,15 @@ const ProtectedRoute = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (!loading && !isAuthenticated) {
+    if (!isAuthenticated) {
+      console.log("Login page redirect");
       navigate("/login");
     }
   }, [isAuthenticated, loading, navigate]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
   return isAuthenticated ? <Outlet /> : null;
 };

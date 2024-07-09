@@ -23,7 +23,8 @@ const EmailSignIn = () => {
       const response = await emailAuthSignIn(email.current.value, password.current.value);
       console.log(response);
       if(response.status === 200){
-        setCredError(true)
+        console.log("status 200")
+        setCredError(false)
         navigate("/app/home")
       }
     }
@@ -32,7 +33,7 @@ const EmailSignIn = () => {
       const response = await emailAuthSignUp(firstName.current.value,lastName.current.value, email.current.value, password.current.value);
       console.log(response);
       if(response.status === 411 || response.status === 401){
-        setCredError(false)
+        setCredError(true)
         navigate("/email")
       }
     }
