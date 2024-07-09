@@ -36,7 +36,7 @@ function App() {
 export const browserRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Outlet />,
     children:[
       {
         path: "/",
@@ -62,28 +62,28 @@ export const browserRouter = createBrowserRouter([
         path: "/signup",
         element: <SignUpCard />,
       },
-      {
-        path: "/app/home",
-        element: <HomePage />,
-      },
-      {
-        path: "/app/new-story",
-        element: <TextEditorPage />,
-      },
       // {
-      //   path: "/",
-      //   element: <ProtectedRoute />,
-      //   children: [
-      //     {
-      //       path: "/home",
-      //       element: <HomePage />,
-      //     },
-      //     {
-      //       path: "/new-story",
-      //       element: <TextEditorPage />,
-      //     },
-      //   ],
+      //   path: "/app/home",
+      //   element: <HomePage />,
       // },
+      // {
+      //   path: "/app/new-story",
+      //   element: <TextEditorPage />,
+      // },
+      {
+        path: "/app",
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "home",
+            element: <HomePage />,
+          },
+          {
+            path: "new-story",
+            element: <TextEditorPage />,
+          },
+        ],
+      },
     ]
   },
   

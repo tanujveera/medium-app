@@ -14,3 +14,8 @@ export const logout = async ()=>{
   const response = await axiosInstance.post("/user/logout")
   return response;
 }
+
+export const authStatus = async () =>{
+  const response = await axiosInstance.get('/user/auth-status');
+  return response.data;
+}
