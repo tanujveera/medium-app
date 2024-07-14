@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,lazy, Suspense } from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./components/Landing page/LandingPage";
+import LandingPage from "./components/LandingPage/LandingPage";
 import About from "./components/About/About";
 import SignIn from "./components/Auth/SignIn";
 // import { Provider } from "react-redux";
@@ -9,26 +9,32 @@ import SignIn from "./components/Auth/SignIn";
 import SignUpCard from "./components/Auth/SignUpCard";
 import SignInCard from "./components/Auth/SignInCard";
 import EmailSignIn from "./components/Auth/EmailSignIn";
-import HomePage from "./components/Home Page/HomePage";
-import TextEditorPage from "./components/New Story/TextEditorPage";
+import Error from "./utils/Error"
+// import HomePage from "./components/HomePage/HomePage";
+// import TextEditorPage from "./components/New Story/TextEditorPage";
 import { useDispatch } from "react-redux";
 import { checkAuthStatus } from "./redux/authSlice";
 import ProtectedRoute from "./utils/protectedRoute";
 
-function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(checkAuthStatus());
-  //   const intervalId = setInterval(() => {
-  //     dispatch(checkAuthStatus());
-  //   }, 10000); // Check every 5 seconds
+const HomePageComp = lazy(() => import("./components/HomePage/HomePage"));
+const TextEditorPage = lazy(() =>
+  import("./components/NewStory/TextEditorPage")
+);
 
-  //   return () => clearInterval(intervalId);
-  // }, [dispatch]);
+function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkAuthStatus());
+    const intervalId = setInterval(() => {
+      dispatch(checkAuthStatus());
+    }, 10000); // Check every 5 seconds
+
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
 
   return (
     <div className="App">
-        <Outlet />
+      <Outlet />
     </div>
   );
 }
@@ -37,7 +43,8 @@ export const browserRouter = createBrowserRouter([
   {
     path: "/",
     element: <Outlet />,
-    children:[
+    errorElement:<Error/>
+    children: [
       {
         path: "/",
         element: <LandingPage />,
@@ -73,20 +80,32 @@ export const browserRouter = createBrowserRouter([
       {
         path: "/app",
         element: <ProtectedRoute />,
+        errorElement:<Error/>
         children: [
           {
             path: "home",
-            element: <HomePage />,
+            element: (
+              <Suspense fallback={<h2>Loading....</h2>}>
+                <HomePageComp />
+              </Suspense>
+            ),
           },
           {
             path: "new-story",
-            element: <TextEditorPage />,
+            element: (
+              <Suspense fallback={<h2>Loading....</h2>}>
+                <TextEditorPage />
+              </Suspense>
+            ),
           },
         ],
       },
-    ]
+      // {
+      //   path:"/error",
+      //   element:<Error/>,
+      // },
+    ],
   },
-  
 ]);
 
 export default App;

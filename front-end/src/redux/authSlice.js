@@ -27,10 +27,10 @@ const authSlice = createSlice({
     builder
       .addCase(checkAuthStatus.pending, (state) => {
         state.loading = true;
-        state.isAuthenticated= false;
+        // state.isAuthenticated= false;
       })
       .addCase(checkAuthStatus.fulfilled, (state, action) => {
-        state.isAuthenticated = true;
+        state.isAuthenticated = action.payload.isAuthenticated;
         state.user = action.payload.user;
         state.loading = false;
       })

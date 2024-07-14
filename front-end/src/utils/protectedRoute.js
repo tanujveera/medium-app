@@ -1,5 +1,5 @@
 // ProtectedRoute.js
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
@@ -10,16 +10,23 @@ const ProtectedRoute = () => {
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    dispatch(checkAuthStatus());
-  }, [dispatch]);
+  const checkAuth = useCallback(async () => {
+    const response = await dispatch(checkAuthStatus());
+    console.log(response);
+  },[dispatch]);
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      console.log("Login page redirect");
-      navigate("/login");
-    }
-  }, [isAuthenticated, loading, navigate]);
+    checkAuth();
+  }, [checkAuth]);
+
+  // useEffect(() => {
+  //   setTimeout(()=>{
+  //     if (!isAuthenticated) {
+  //       console.log(isAuthenticated);
+  //       navigate("/login");
+  //     }
+  //   },2000)
+  // }, [isAuthenticated, loading, navigate]);
 
   // if (loading) {
   //   return <div>Loading...</div>;

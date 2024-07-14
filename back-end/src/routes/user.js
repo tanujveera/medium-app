@@ -42,7 +42,7 @@ userRouter.post("/signup", async (req,res) => {
   const userCreate = await createUser(username,hashedPassword,firstName,lastName);
   const uName = userCreate.username;
   const token = jwt.sign(uName,JWT_SECRET)
-  res.cookie('token',token,{ httpOnly: true, secure: true })
+  res.cookie('token',token,{ httpOnly: true })
   res.status(HTTP.OK).json({
     msg:"User created successfully",
   })
@@ -70,7 +70,7 @@ userRouter.post("/signin", async (req,res)=>{
   }
   if(user){
     const token = jwt.sign(username,JWT_SECRET);
-    res.cookie('token',token,{ httpOnly: true, secure: true })
+    res.cookie('token',token,{ httpOnly: true })
     res.status(HTTP.OK).json({
       msg:"Login Successful",
     })
@@ -156,10 +156,10 @@ userRouter.delete("/deleteAll",authMiddleware, async (req,res)=>{
 
 // User logout
 userRouter.post("/logout",(req,res)=>{
-  res.clearCookie('token',{httpOnly:true, secure:false})
+  res.clearCookie('token',{httpOnly:true})
   res.status(200).json({msg:"Logged out successfully"})
 })
 
 userRouter.get('/auth-status', authMiddleware, (req, res) => {
-  res.status(200).json({ user: req.userId });
+  res.status(200).json({ isAuthenticated:true ,user: req.userId });
 });
