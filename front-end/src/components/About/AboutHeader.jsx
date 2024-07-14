@@ -19,10 +19,10 @@ const AboutHeader = () => {
           </Link>
         </div>
         <div className="flex">
-          <Link to="/signin">
+          <Link to="/login">
             <div className="mr-6 text-gray-200 rounded-full border border-white px-4 py-2 hover:text-white cursor-pointer" >Sign in</div>
           </Link>
-          <Link to="/signup">
+          <Link to="/login">
             <div className=" text-black rounded-full bg-slate-200 px-4 py-2 hover:bg-white cursor-pointer">Sign up</div>
           </Link>
         </div>

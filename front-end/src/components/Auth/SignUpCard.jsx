@@ -10,7 +10,7 @@ const SignUpCard = () => {
     dispatch(loginState(true));
   };
   return (
-    <div className="bg-white w-[650px] shadow-2xl h-[700px] ml-[450px]">
+    <div className="bg-white lg:w-[650px] shadow-2xl lg:h-[700px] lg:ml-[450px]">
       <div className=" px-11 py-8">
         <div>
           <Link to="/">

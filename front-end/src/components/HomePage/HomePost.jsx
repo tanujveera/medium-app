@@ -3,7 +3,7 @@ import user from "../../assets/user.svg";
 
 const HomePost = () => {
   return (
-    <div className=" shadow-xl mx-[400px] h-[200px] mt-4 flex">
+    <div className="shadow-xl lg:mx-[400px] h-[200px] mt-4 flex md:mx-10 lg:mb-8 md:mb-12">
       <div className="w-3/4 border-r-2">
         <div className="flex">
           <img src={user} alt="author" className="w-8 m-4" />

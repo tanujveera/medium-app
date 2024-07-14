@@ -9,6 +9,8 @@ const HomePage = () => {
        <HomePageHeader/>
       </div>
       <HomePageBody/>
+      <HomePageBody/>
+      <HomePageBody/>
     </div>
   );
 };

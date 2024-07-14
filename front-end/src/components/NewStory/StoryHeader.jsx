@@ -17,7 +17,7 @@ const StoryHeader = () => {
   }
   return (
     <div>
-      <div className="flex justify-between p-4 bg-white pl-44">
+      <div className="flex justify-between p-4 bg-white lg:pl-44 md:pl-28">
         <div>
           <Link to="/app/home">
             <img className="w-32" src={MediumRainbow} alt="Medium Logo" />
