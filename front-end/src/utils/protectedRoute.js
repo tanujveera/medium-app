@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { checkAuthStatus } from "../redux/authSlice";
+import Error from "./Error"
 
 const ProtectedRoute = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const ProtectedRoute = () => {
   //   return <div>Loading...</div>;
   // }
 
-  return isAuthenticated ? <Outlet /> : null;
+  return isAuthenticated ? <Outlet /> : <Error/>;
 };
 
 export default ProtectedRoute;

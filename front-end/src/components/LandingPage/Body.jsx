@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 const Body = () => {
   return (
     <div className="">
-      <div className="flex justify-between -mt-8 h-[575px]">
-        <div className="w-4/6 pl-44 pt-20">
-          <p className="text-9xl font-serif">Human</p>
-          <p className="text-9xl font-serif pb-6">stories & ideas</p>
-          <p className="text-2xl pb-10">
+      <div className="flex justify-between lg:-mt-8 lg:h-[575px] md:h-[350px]">
+        <div className="lg:w-4/6 lg:pl-44 lg:pt-20 sm:pl-24 sm:pt-14">
+          <p className="lg:text-9xl font-serif sm:text-5xl">Human</p>
+          <p className="lg:text-9xl font-serif pb-6 sm:text-5xl">stories & ideas</p>
+          <p className="md:text-2xl pb-10 sm:text-lg">
             A place to read, write, and deepen your understanding
           </p>
           <Link to="/login">
             <button
-              className="text-xl text-white bg-black rounded-full w-48 h-10"
+              className="lg:text-xl text-white bg-black rounded-full lg:w-48 h-10 sm:text-lg sm:w-36"
             >
               Get started
             </button>
           </Link>
         </div>
-        <div className="w-[450px] h-[640px]">
+        <div className="w-[450px] h-[640px] md:h-[300px] md:w-[410px]">
           <img className="" src={LANDING_PAGE} alt="Landing Page" />
         </div>
       </div>

@@ -4,14 +4,10 @@ import "./App.css";
 import LandingPage from "./components/LandingPage/LandingPage";
 import About from "./components/About/About";
 import SignIn from "./components/Auth/SignIn";
-// import { Provider } from "react-redux";
-// import appStore from "./redux/appStore";
 import SignUpCard from "./components/Auth/SignUpCard";
 import SignInCard from "./components/Auth/SignInCard";
 import EmailSignIn from "./components/Auth/EmailSignIn";
 import Error from "./utils/Error"
-// import HomePage from "./components/HomePage/HomePage";
-// import TextEditorPage from "./components/New Story/TextEditorPage";
 import { useDispatch } from "react-redux";
 import { checkAuthStatus } from "./redux/authSlice";
 import ProtectedRoute from "./utils/protectedRoute";
@@ -43,7 +39,7 @@ export const browserRouter = createBrowserRouter([
   {
     path: "/",
     element: <Outlet />,
-    errorElement:<Error/>
+    errorElement:<Error/>,
     children: [
       {
         path: "/",
@@ -80,7 +76,7 @@ export const browserRouter = createBrowserRouter([
       {
         path: "/app",
         element: <ProtectedRoute />,
-        errorElement:<Error/>
+        errorElement:<Error/>,
         children: [
           {
             path: "home",

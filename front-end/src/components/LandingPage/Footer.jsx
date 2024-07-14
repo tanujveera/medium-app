@@ -3,14 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-green-500 text-7xl w-full text-white transition-all duration-300 ease-in-out hover:rounded-full">
-        <div className="justify-center font-serif py-20 flex hover:cursor-pointer">
-          <p className="inline-block transition transform duration-300 ease-in-out hover:-translate-x-6">Unlock a world of wisdom </p>
+      <div className="bg-green-500 lg:text-7xl md:text-5xl w-full text-white transition-all duration-300 ease-in-out hover:rounded-full">
+        <div className="justify-center font-serif lg:py-20 md:py-10 flex hover:cursor-pointer">
+          <p className="inline-block transition transform duration-300 ease-in-out hover:-translate-x-6 ">Unlock a world of wisdom </p>
           <p className="inline-block transition transform duration-300 ease-in-out hover:translate-x-6">{"→"}</p>
         </div>
         <hr className="border border-black opacity-50"></hr>
       </div>
-      <div className="px-[500px] py-6">
+      <div className="lg:px-[500px] py-6">
         <ul className="flex justify-around text-gray-500 text-xs">
           <li>Help</li>
           <li>Status</li>

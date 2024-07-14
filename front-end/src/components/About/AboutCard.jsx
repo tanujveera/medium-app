@@ -5,11 +5,11 @@ const AboutCard = (props) => {
   return (
     <div>
       <div
-        className="text-white font-serif py-20 flex justify-between transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-black hover:bg-white"
+        className="text-white font-serif lg:py-20 flex justify-between transition-colors duration-300 ease-in-out md:py-10 hover:cursor-pointer hover:text-black hover:bg-white"
         key={id}
       >
-        <p className="text-7xl pl-8">{data}</p>
-        <p className="text-7xl pr-8">→</p>
+        <p className="lg:text-7xl pl-8 md:text-5xl">{data}</p>
+        <p className="lg:text-7xl pr-8 md:text-5xl">→</p>
       </div>
       <hr className="border border-white opacity-50"></hr>
     </div>

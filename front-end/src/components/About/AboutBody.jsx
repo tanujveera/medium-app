@@ -16,11 +16,11 @@ const AboutBody = () => {
   
   return (
     <div className="bg-black">
-    <div className="w-1/2 text-white pl-10 pb-32">
-      <p className="text-8xl font-serif pt-36">{aboutAPI?.aboutData?.heading1}</p>
+    <div className="lg:w-1/2 text-white pl-10 lg:pb-32 md:w-5/6 md:pb-12">
+      <p className="lg:text-8xl font-serif lg:pt-36 md:text-6xl md:pt-24">{aboutAPI?.aboutData?.heading1}</p>
       <p className="pt-16 text-xl font-serif">{aboutAPI?.aboutData?.heading2}</p>
       <p className="pt-4 text-xl font-serif pb-10">{aboutAPI?.aboutData?.heading3}</p>
-      <div className="text-3xl">
+      <div className="lg:text-3xl md:text-xl">
         <p className=" bg-slate-200 bg-opacity-50 inline-grid">
           Ultimately, our goal is to deepen our collective
         </p>

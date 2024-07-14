@@ -13,8 +13,8 @@ const LandingHeader = () => {
   return (
     <div className="bg-white">
       <div className="flex justify-between p-4">
-        <div className="pl-36">
-          <img className="w-44" src={MEDIUM_LOGO} alt="Medium Logo" />
+        <div className="pl-36 sm:pl-16">
+          <img className="w-44 sm:28" src={MEDIUM_LOGO} alt="Medium Logo" />
         </div>
         <div className="flex justify-evenly pr-36 font-medium">
           <Link to="/about" className="px-4 py-2 text-sm">
