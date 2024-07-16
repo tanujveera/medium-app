@@ -5,20 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { checkAuthStatus } from "../redux/authSlice";
 import Error from "./Error"
+import useCheckAuthStatus from "./hooks/useCheckAuthStatus";
 
 const ProtectedRoute = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
 
-  const checkAuth = useCallback(async () => {
-    const response = await dispatch(checkAuthStatus());
-    console.log(response);
-  },[dispatch]);
-
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+  useCheckAuthStatus();
 
   // useEffect(() => {
   //   setTimeout(()=>{

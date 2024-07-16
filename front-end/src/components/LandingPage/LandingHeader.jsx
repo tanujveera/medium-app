@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import { MEDIUM_LOGO } from "../../utils/constants";
 import { Link } from "react-router-dom";
-// import { useDispatch } from "react-redux";
+import { checkAuthStatus } from "../../redux/authSlice";
+import { useDispatch } from "react-redux";
 // import { loginModal } from "../../redux/headerStore";
 
 const LandingHeader = () => {
-  
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const handleModal = () => {
   //   dispatch(loginModal());
   // };
+  const checkAuth = useCallback(async () => {
+    const response = await dispatch(checkAuthStatus());
+    console.log(response);
+  },[dispatch]);
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
   return (
     <div className="bg-white">
       <div className="flex justify-between p-4">
@@ -21,8 +28,10 @@ const LandingHeader = () => {
             Our Story
           </Link>
           <Link className="px-4 py-2 text-sm">Membership</Link>
-          <Link to="/login" className="px-4 py-2 text-sm">Write</Link>
-          <Link to="/login"  className="px-4 py-2 text-sm">
+          <Link to="/login" className="px-4 py-2 text-sm">
+            Write
+          </Link>
+          <Link to="/login" className="px-4 py-2 text-sm">
             Sign in
           </Link>
           <Link to="/login">
