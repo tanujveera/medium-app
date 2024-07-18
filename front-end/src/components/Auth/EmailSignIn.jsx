@@ -36,6 +36,11 @@ const EmailSignIn = () => {
         setCredError(true)
         navigate("/email")
       }
+      if(response.status === 200){
+        alert("redirecting to login page")
+        dispatch(loginState(true))
+        navigate("/login")
+      }
     }
   }
 
