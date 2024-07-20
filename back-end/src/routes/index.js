@@ -8,6 +8,4 @@ export const router = express.Router();
 router.use("/content",contentRouter);
 router.use("/user",userRouter);
 
-router.get("/posts",(req,res)=>{
-  res.json({msg:"Hello"})
-})
+router.use("/posts")

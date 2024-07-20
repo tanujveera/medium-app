@@ -63,3 +63,33 @@ export const deleteAllUsers = async () =>{
 
 //---------------------------------------------------------------
 
+// Add Post
+export const addPost = async (title, content, published, authorId) =>{
+  const post = await prisma.post.create({
+    data:{
+      title:title,
+      content:content,
+      published: published,
+      authorId:authorId
+    }
+  });
+  return post;
+}
+
+// Get All posts
+export const allPosts = async () =>{
+  const posts = await prisma.post.findMany();
+  return posts;
+}
+
+// Get post
+export const getPost = async(id,authorId)=>{
+  const post = await prisma.post.find({
+    where:{
+      id:id,
+      authorId:authorId
+    }
+  })
+  return post;
+}
+
