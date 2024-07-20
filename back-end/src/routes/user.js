@@ -5,16 +5,9 @@ import jwt from "jsonwebtoken"
 import { JWT_SECRET } from "../data/config.js";
 import { authMiddleware } from "../authMiddleware.js";
 import bcrypt from "bcrypt";
+import { HTTP } from "../data/constants.js";
 
 export const userRouter = express.Router();
-
-const HTTP = {
-  OK: 200,
-  NOT_FOUND: 404,
-  INTERNAL_SERVER_ERROR: 500,
-  LENGTH_REQUIRED: 411,
-  FORBIDDEN: 403,
-};
 
 // Sign up 
 const signUpBody = z.object({

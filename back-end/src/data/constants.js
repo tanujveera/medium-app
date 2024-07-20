@@ -64,3 +64,11 @@ export const aboutCards = [
     data: "Become a member",
   },
 ];
+
+export const HTTP = {
+  OK: 200,
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500,
+  LENGTH_REQUIRED: 411,
+  FORBIDDEN: 403,
+};
