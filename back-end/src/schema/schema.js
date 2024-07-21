@@ -76,13 +76,19 @@ export const addPost = async (title, content, published, authorId) => {
   return post;
 };
 
-// Get All posts
-export const allPosts = async (emailId) => {
+// Get All posts of that user
+export const allUserPosts = async (emailId) => {
   const posts = await prisma.post.findMany({
     where:{
       authorId:emailId
     }
   });
+  return posts;
+};
+
+// Get All posts of that user
+export const allPosts = async () => {
+  const posts = await prisma.post.findMany();
   return posts;
 };
 
@@ -96,3 +102,13 @@ export const getPost = async (id,authorId) => {
   });
   return post;
 };
+
+// Delete post
+export const deletePost = async (id,authorId)=>{
+  const post = await prisma.post.delete({
+    where: {
+      id: id,
+      authorId:authorId
+    },
+  })
+}
