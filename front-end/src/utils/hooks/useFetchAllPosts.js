@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { fetchPosts } from "../../utils/auth/fetchPosts";
+import { fetchPosts } from "../API/postsAPI";
 import { useDispatch } from "react-redux";
 import { renderPosts } from "../../redux/postSlice";
 

@@ -4,9 +4,9 @@ import MediumRainbow from "../../assets/Medium Rainbow.jpeg";
 import write from "../../assets/write.svg";
 import notification from "../../assets/notification.svg";
 import user from "../../assets/user.svg";
-import { useDispatch, } from "react-redux";
+import { useDispatch } from "react-redux";
 import { homePage, newStory } from "../../redux/storySlice";
-import { logout } from "../../utils/auth/emailAuth";
+import { logout } from "../../utils/API/emailAuth";
 
 const HomePageHeader = () => {
   const dispatch = useDispatch();
@@ -15,24 +15,31 @@ const HomePageHeader = () => {
     dispatch(newStory(true));
     dispatch(homePage(false));
   };
-  const handleLogout = async ()=>{
+  const handleLogout = async () => {
     // console.log("logout jsx");
     const response = await logout();
-    if(response.data.msg === 'Logged out successfully'){
-      navigate("/")
+    if (response.data.msg === "Logged out successfully") {
+      navigate("/");
     }
-    
+
     console.log(response);
-  }
+  };
 
   return (
     <div>
       <div className="flex justify-between p-4 bg-white">
         <div className="flex">
           <Link>
-            <img className="w-32 ml-8 mr-14" src={MediumRainbow} alt="Medium Logo" />
+            <img
+              className="w-32 ml-8 mr-14"
+              src={MediumRainbow}
+              alt="Medium Logo"
+            />
           </Link>
-          <input placeholder="  Search" className="border border-black rounded-full bg-slate-50"/>
+          <input
+            placeholder="  Search"
+            className="border border-black rounded-full bg-slate-50"
+          />
         </div>
         <div className="flex pr-16">
           <Link
@@ -51,7 +58,9 @@ const HomePageHeader = () => {
             src={user}
             alt="user profile"
           />
-          <button className="pl-2" onClick={handleLogout}>Logout</button>
+          <button className="pl-2" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
       <hr className="border border-gray-500 opacity-50"></hr>
