@@ -38,14 +38,16 @@ const StoryTextEditor = () => {
     "video",
   ];
 
-  const handlePublish = () => {
-
-  }
+  const handlePublish = () => {};
 
   return (
     <div className="my-6">
       <div className="my-4 flex justify-center">
-        <input className="border border-slate-300 rounded-md shadow-lg px-20 py-2" type="text" />
+        <input
+          placeholder="Title"
+          className="border border-slate-300 rounded-md shadow-lg w-full py-2 px-4 placeholder-slate-400 placeholder:text-center focus:outline-none"
+          type="text"
+        />
       </div>
       <ReactQuill
         value={editorValue}
@@ -55,7 +57,10 @@ const StoryTextEditor = () => {
         className="bg-white rounded-lg shadow-lg"
       />
       <div className="flex flex-col items-end">
-        <button onClick={handlePublish} className="text-white bg-green-500 px-4 py-1 rounded-full ml-2 mt-4 ">
+        <button
+          onClick={handlePublish}
+          className="text-white bg-green-500 px-4 py-1 rounded-full ml-2 mt-4 "
+        >
           Publish
         </button>
       </div>
