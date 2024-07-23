@@ -5,7 +5,15 @@ import { JWT_SECRET } from "../data/config.js";
 import { authMiddleware } from "../authMiddleware.js";
 import bcrypt from "bcrypt";
 import { HTTP } from "../data/constants.js";
-import { addPost, allPosts, allUserPosts, deletePost, getPost, getUser } from "../schema/schema.js";
+import {
+  addPost,
+  allPosts,
+  allUserPosts,
+  deletePost,
+  getPost,
+  getUser,
+  updatePost,
+} from "../schema/schema.js";
 
 export const postsRouter = express.Router();
 
@@ -94,12 +102,31 @@ postsRouter.get("/allposts", async (req, res) => {
 });
 
 // Delete post
-postsRouter.delete("/posts", authMiddleware,async (req,res)=>{
-  const posts = await getPost(req.body.id,req.userId);
-  if(posts){
-    await deletePost(req.body.id,req.userId);
+postsRouter.delete("/posts", authMiddleware, async (req, res) => {
+  const posts = await getPost(req.body.id, req.userId);
+  if (posts) {
+    await deletePost(req.body.id, req.userId);
     res.status(HTTP.OK).json({
-      msg:"Post deleted"
-    })
+      msg: "Post deleted",
+    });
   }
-})
+});
+
+// Update post
+postsRouter.put("/posts", authMiddleware, async (req, res) => {
+  const { id, data } = req.body;
+  const posts = await getPost(id, req.userId);
+  try {
+    if (posts) {
+      await updatePost(id, req.userId, data);
+      res.status(HTTP.OK).json({
+        msg: `Post updated ${id}`,
+      });
+    }
+  } catch (e) {
+    res.status(HTTP.INTERNAL_SERVER_ERROR).json({
+      msg: "Internal Server Error",
+    });
+  }
+});
+

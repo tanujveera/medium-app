@@ -9,7 +9,7 @@ const HomePost = (props) => {
         <div className="w-3/4 border-r-2">
           <div className="flex">
             <img src={user} alt="author" className="w-8 m-4" />
-            <p className="my-4">{title}</p>
+            <p className="my-4">{authorId}</p>
           </div>
           <div className="ml-4 text-2xl font-bold">{title}</div>
           <div className="ml-4 text-base text-gray-500">

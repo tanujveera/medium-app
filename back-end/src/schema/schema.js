@@ -112,3 +112,14 @@ export const deletePost = async (id,authorId)=>{
     },
   })
 }
+
+//Update post
+export const updatePost = async (id,authorId,updatedData) => {
+  const post = prisma.post.update({
+    where:{
+      id:id,
+      authorId:authorId
+    },
+    data: updatedData
+  })
+}
