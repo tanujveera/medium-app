@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import MediumRainbow from "../../assets/Medium Rainbow.jpeg";
 import notification from "../../assets/notification.svg";
 import user from "../../assets/user.svg";
-import { logout } from "../../utils/auth/emailAuth";
+import { logout } from "../../utils/API/emailAuth";
 
 const StoryHeader = () => {
   const navigate = useNavigate()

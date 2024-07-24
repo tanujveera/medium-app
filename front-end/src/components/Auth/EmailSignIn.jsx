@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import back from "../../assets/back.svg";
 import { loginState } from "../../redux/headerStore";
-import { emailAuthSignIn, emailAuthSignUp } from "../../utils/auth/emailAuth";
+import { emailAuthSignIn, emailAuthSignUp } from "../../utils/API/emailAuth";
 
 const EmailSignIn = () => {
   const firstName = useRef();

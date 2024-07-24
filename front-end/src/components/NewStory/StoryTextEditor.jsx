@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import styles
 
 const StoryTextEditor = () => {
-  const [editorValue, setEditorValue] = useState("");
+  const [editorValue, setEditorValue] = useState(null);
+  const title = useRef();
 
   const modules = {
     toolbar: [
@@ -38,12 +39,16 @@ const StoryTextEditor = () => {
     "video",
   ];
 
-  const handlePublish = () => {};
+  const handlePublish = () => {
+    console.log(title);
+    console.log(editorValue);
+  };
 
   return (
     <div className="my-6">
       <div className="my-4 flex justify-center">
         <input
+          ref={title}
           placeholder="Title"
           className="border border-slate-300 rounded-md shadow-lg w-full py-2 px-4 placeholder-slate-400 placeholder:text-center focus:outline-none"
           type="text"
