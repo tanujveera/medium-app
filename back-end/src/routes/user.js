@@ -56,7 +56,7 @@ userRouter.post("/signin", async (req,res)=>{
     })
   }
   const user = await getUser(req.body.username);
-  console.log(user);
+  // console.log(user);
   const isPasswordValid = await bcrypt.compare(password, user.password)
   if(!isPasswordValid){
     return res.status(401).json({msg:"Invalid Credentials"})
