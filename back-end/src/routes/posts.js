@@ -33,9 +33,10 @@ postsRouter.post("/posts", authMiddleware, async (req, res) => {
     });
   }
   try {
-    const user = await addPost(title, content, published, req.userId);
+    const post = await addPost(title, content, published, req.userId);
     res.status(HTTP.OK).json({
       msg: "Post published successfully",
+      posts:post
     });
   } catch (e) {
     console.log(e);
@@ -52,9 +53,10 @@ postsRouter.get("/posts", authMiddleware, async (req, res) => {
   try {
     if (user) {
       const posts = await getPost(id, req.userId);
+      console.log(posts);
       res.json({
         msg: "Fetched Posts",
-        posts: posts,
+        post: posts,
       });
     }
   } catch (e) {

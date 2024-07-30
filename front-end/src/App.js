@@ -11,6 +11,7 @@ import Error from "./utils/Error"
 import { useDispatch } from "react-redux";
 import { checkAuthStatus } from "./redux/authSlice";
 import ProtectedRoute from "./utils/protectedRoute";
+import BlogPost from "./components/BlogPost/BlogPost";
 
 const HomePageComp = lazy(() => import("./components/HomePage/HomePage"));
 const TextEditorPage = lazy(() =>
@@ -65,14 +66,6 @@ export const browserRouter = createBrowserRouter([
         path: "/signup",
         element: <SignUpCard />,
       },
-      // {
-      //   path: "/app/home",
-      //   element: <HomePage />,
-      // },
-      // {
-      //   path: "/app/new-story",
-      //   element: <TextEditorPage />,
-      // },
       {
         path: "/app",
         element: <ProtectedRoute />,
@@ -94,12 +87,20 @@ export const browserRouter = createBrowserRouter([
               </Suspense>
             ),
           },
+          {
+            path:"post",
+            element:(
+              <Suspense fallback={<h2>Loading....</h2>}>
+                <BlogPost />
+              </Suspense>
+            ),
+          },
         ],
       },
-      // {
-      //   path:"/error",
-      //   element:<Error/>,
-      // },
+      {
+        path:"/error",
+        element:<Error/>,
+      },
     ],
   },
 ]);

@@ -86,7 +86,7 @@ export const allUserPosts = async (emailId) => {
   return posts;
 };
 
-// Get All posts of that user
+// Get All posts
 export const allPosts = async () => {
   const posts = await prisma.post.findMany();
   return posts;
