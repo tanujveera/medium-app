@@ -5,7 +5,7 @@ export const fetchPosts = async ()=>{
   return response; 
 }
 
-export const publishPost = async (data)=>{
-  const response = await axiosInstance.post("/blog/posts");
+export const publishPost = async (title,data)=>{
+  const response = await axiosInstance.post("/blog/posts",{title,content:data,published:true});
   return response;
 }

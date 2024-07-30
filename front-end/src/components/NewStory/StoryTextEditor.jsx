@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import styles
+import { publishPost } from "../../utils/API/postsAPI";
+import {stringify} from "flatted";
 
 const StoryTextEditor = () => {
   const [editorValue, setEditorValue] = useState(null);
@@ -39,9 +41,11 @@ const StoryTextEditor = () => {
     "video",
   ];
 
-  const handlePublish = () => {
+  const handlePublish = async () => {
     console.log(title);
-    console.log(editorValue);
+    console.log(stringify(editorValue));
+    const response = await publishPost(title.current.value,stringify(editorValue));
+    console.log(response);
   };
 
   return (

@@ -20,7 +20,7 @@ export const postsRouter = express.Router();
 // Add a post
 const createPost = z.object({
   title: z.string(),
-  content: z.string(),
+  content: z.string().optional(),
   published: z.boolean(),
 });
 
