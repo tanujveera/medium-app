@@ -6,22 +6,20 @@ import { useDispatch } from "react-redux";
 import { renderPosts } from "../../redux/postSlice";
 
 const BlogPost = () => {
-  const param = useParams();
+  const {id} = useParams();
   const dispatch = useDispatch();
-  console.log(param);
+  console.log(id);
 
-  const handlePost = useCallback(
-    async (id) => {
+  const handlePost = useCallback(async (id) => {
       const response = await getPost(id);
+      console.log(response)
       dispatch(renderPosts(response));
-    },
-    [dispatch]
-  );
+    },[dispatch]);
 
   useEffect(() => {
-    handlePost();
-  }, [handlePost]);
-  
+    handlePost(id);
+  }, [handlePost, id]);
+
   return (
     <div className="m-10">
       <BlogBody />
