@@ -1,17 +1,32 @@
-import React from 'react'
-import user from "../../assets/user.svg"
+import React, { useEffect, useCallback } from "react";
+import BlogBody from "./BlogBody";
+import { useParams } from "react-router-dom";
+import { getPost } from "../../utils/API/postsAPI";
+import { useDispatch } from "react-redux";
+import { renderPosts } from "../../redux/postSlice";
 
 const BlogPost = () => {
+  const param = useParams();
+  const dispatch = useDispatch();
+  console.log(param);
+
+  const handlePost = useCallback(
+    async (id) => {
+      const response = await getPost(id);
+      dispatch(renderPosts(response));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    handlePost();
+  }, [handlePost]);
+  
   return (
     <div className="m-10">
-      <div className="text-5xl font-bold">
-        Title
-      </div>
-      <div>
-      <img src={user} alt="author" className="w-8 m-4" />
-      </div>
+      <BlogBody />
     </div>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;

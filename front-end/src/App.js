@@ -88,7 +88,7 @@ export const browserRouter = createBrowserRouter([
             ),
           },
           {
-            path:"post",
+            path:"post/:id",
             element:(
               <Suspense fallback={<h2>Loading....</h2>}>
                 <BlogPost />
