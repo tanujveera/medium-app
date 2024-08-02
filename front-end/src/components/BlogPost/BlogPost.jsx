@@ -11,9 +11,11 @@ const BlogPost = () => {
   console.log(id);
 
   const handlePost = useCallback(async (id) => {
+    if(!id){
       const response = await getPost(id);
       console.log(response)
       dispatch(renderPosts(response));
+    }
     },[dispatch]);
 
   useEffect(() => {

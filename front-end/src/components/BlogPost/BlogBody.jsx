@@ -1,7 +1,10 @@
 import React from "react";
 import user from "../../assets/user.svg"
+import {useSelector} from "react-redux"
 
 const BlogBody = () => {
+  const post = useSelector((store)=>store.post.postData);
+  console.log(post);
 
   return (
     <div>
