@@ -47,18 +47,14 @@ postsRouter.post("/posts", authMiddleware, async (req, res) => {
 });
 
 // Get a specific post
-postsRouter.get("/posts", authMiddleware, async (req, res) => {
-  const { id } = req.body;
-  const user = getUser(req.userId);
+postsRouter.get("/posts/:postId", async (req, res) => {
+  const { postId } = req.params;  
   try {
-    if (user) {
-      const posts = await getPost(id, req.userId);
-      console.log(posts);
+      const posts = await getPost(postId);
       res.json({
         msg: "Fetched Posts",
         post: posts,
       });
-    }
   } catch (e) {
     console.log(e);
     res.status(HTTP.INTERNAL_SERVER_ERROR).json({

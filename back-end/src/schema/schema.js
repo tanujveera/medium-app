@@ -93,11 +93,10 @@ export const allPosts = async () => {
 };
 
 // Get post
-export const getPost = async (id,authorId) => {
+export const getPost = async (id) => {
   const post = await prisma.post.findUnique({
     where: {
       id: id,
-      authorId:authorId
     },
   });
   return post;

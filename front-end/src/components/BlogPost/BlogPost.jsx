@@ -3,18 +3,17 @@ import BlogBody from "./BlogBody";
 import { useParams } from "react-router-dom";
 import { getPost } from "../../utils/API/postsAPI";
 import { useDispatch } from "react-redux";
-import { renderPosts } from "../../redux/postSlice";
+import { postBlogData } from "../../redux/postSlice";
 
 const BlogPost = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
-  console.log(id);
 
   const handlePost = useCallback(async (id) => {
-    if(!id){
+    if(id !== undefined || id !== null){
       const response = await getPost(id);
-      console.log(response)
-      dispatch(renderPosts(response));
+      console.log(response);
+      dispatch(postBlogData(response?.data?.post));
     }
     },[dispatch]);
 
