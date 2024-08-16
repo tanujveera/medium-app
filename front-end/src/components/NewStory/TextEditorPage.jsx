@@ -12,6 +12,11 @@ const TextEditorPage = () => {
         {/* <TipTapEditor /> */}
         <StoryTextEditor/>
       </div>
+      <div className="flex flex-col items-end mr-5 mb-5">
+        <button className="text-white bg-black px-4 py-1 rounded-full text-3xl font-extrabold font-serif">
+          AI
+        </button>
+      </div>
     </div>
   );
 };

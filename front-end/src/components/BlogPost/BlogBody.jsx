@@ -6,13 +6,13 @@ import { parsePostData } from "../../utils/parsePostData";
 
 const BlogBody = () => {
   const post = useSelector((store)=>store.post.singlePost);
-  const content = parsePostData(post.content)
+  const content = parsePostData(post?.content)
   return (
     <div>
       <div className="text-5xl font-bold">{post?.title}</div>
-      <div>
+      <div className="flex">
         <img src={user} alt="author" className="w-8 m-4" />
-        <p>{post?.authorId}</p>
+        <p className="my-4 font-bold">{post?.authorId}</p>
       </div>
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content)}}>
       </div>

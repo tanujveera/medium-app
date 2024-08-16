@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { postFetch } from '../../redux/postSlice';
 import Shimmer from '../Shimmer';
 
