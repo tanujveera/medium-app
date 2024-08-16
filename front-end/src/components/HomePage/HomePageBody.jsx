@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 
 const HomePageBody = () => {
   const postsStore = useSelector((store) => store.post.postsData);
-  console.log(postsStore);
+  // console.log(postsStore);
   return (
       <div className="mx-auto">
         {postsStore && (postsStore?.map((item)=>(

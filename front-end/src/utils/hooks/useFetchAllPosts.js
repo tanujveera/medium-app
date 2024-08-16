@@ -9,7 +9,7 @@ export const useFetchAllPosts = () => {
   const handleFetch = useCallback(async () => {
     const postFetch = await fetchPosts();
     dispatch(renderPosts(postFetch?.data?.posts));
-    console.log(postFetch?.data?.posts);
+    // console.log(postFetch?.data?.posts);
   }, [dispatch]);
 
   useEffect(() => {

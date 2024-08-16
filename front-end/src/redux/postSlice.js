@@ -3,7 +3,6 @@ import { getPost } from "../utils/API/postsAPI";
 
 export const postFetch = createAsyncThunk("post/fetch", async (id) =>{
   const response = await getPost(id);
-  console.log(response?.data)
   return response?.data?.post;
 })
 

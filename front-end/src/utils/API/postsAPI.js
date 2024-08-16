@@ -12,6 +12,6 @@ export const publishPost = async (title,data)=>{
 
 export const getPost = async (postId)=>{
   const response = await axiosInstance.get("/blog/posts/"+postId);
-  console.log(response);
+  // console.log(response);
   return response;
 }

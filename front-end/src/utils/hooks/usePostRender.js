@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { postFetch } from '../../redux/postSlice';
+import Shimmer from '../Shimmer';
 
 const usePostRender = (id) => {
   const dispatch = useDispatch();
@@ -10,13 +11,11 @@ const usePostRender = (id) => {
       const response = await dispatch(postFetch(id));
     }
     else{
-      console.log("Else useEffect");
+      <Shimmer/>
     }
     }
     handleFn()
   },[dispatch,id]);
-  const post = useSelector((state) => state.post.singlePost);
-  console.log(post);
 }
 
 export default usePostRender

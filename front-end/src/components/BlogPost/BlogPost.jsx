@@ -5,7 +5,6 @@ import usePostRender from "../../utils/hooks/usePostRender";
 
 const BlogPost = () => {
   const {id} = useParams();
-  console.log(id);
   usePostRender(id);
 
   return (
