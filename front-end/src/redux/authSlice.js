@@ -5,7 +5,7 @@ export const checkAuthStatus = createAsyncThunk(
   "auth/checkStatus",
   async () => {
     const response = await axiosInstance.get("/user/auth-status");
-    return response.data;
+    return response?.data;
   }
 );
 
@@ -45,6 +45,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, login } = authSlice.actions;
 
 export default authSlice.reducer;

@@ -1,11 +1,10 @@
 import React from "react";
 import user from "../../assets/user.svg"
 import {useSelector} from "react-redux"
-import { parse } from "flatted"
+import DOMPurify from "dompurify"
 
 const BlogBody = () => {
-  const post = useSelector((store)=>store.post.singlePost);
-  console.log(post);
+  const post = useSelector((store)=>store.post.singlePost); 
 
   return (
     <div>
@@ -14,7 +13,8 @@ const BlogBody = () => {
         <img src={user} alt="author" className="w-8 m-4" />
         <p>{post?.authorId}</p>
       </div>
-      
+      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post?.content)}}>
+      </div>
     </div>
   );
 };
