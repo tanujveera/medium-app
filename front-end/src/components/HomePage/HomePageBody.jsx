@@ -8,11 +8,9 @@ const HomePageBody = () => {
   const postsStore = useSelector((store) => store.post.postsData);
   // console.log(postsStore);
   return (
-      <div className="mx-auto">
+      <div className="grid col-span-1">
         {postsStore && (postsStore?.map((item)=>(
-          <Link key={item.id} to={"/app/post/"+item.id}>
             <HomePost key={item.id} data = {item}/>
-          </Link>
         )))}
       </div>
   );
