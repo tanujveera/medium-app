@@ -72,5 +72,3 @@ export const HTTP = {
   LENGTH_REQUIRED: 411,
   FORBIDDEN: 403,
 };
-
-export const OPENAI_API_KEY = process.env.OPEN_AI;
