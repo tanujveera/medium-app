@@ -2,7 +2,6 @@ import React from "react";
 import "../../App.css";
 import HomePost from "./HomePost";
 import { useSelector } from "react-redux";
-import {Link} from "react-router-dom"
 
 const HomePageBody = () => {
   const postsStore = useSelector((store) => store.post.postsData);
